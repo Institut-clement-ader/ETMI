@@ -1,8 +1,14 @@
-image:: https://readthedocs.org/projects/etmi/badge/?version=latest
+ETMI
+####
+
+.. image:: https://readthedocs.org/projects/etmi/badge/?version=latest
     :target: https://etmi.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
       
 
-# ETMI
-* Requirement
-* Installation
+
+
+Requirement
+***********
+Installation
+************
