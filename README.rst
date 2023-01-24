@@ -8,7 +8,4 @@ ETMI
 
 
 
-Requirement
-***********
-Installation
-************
+Proget d'asservisement de 4 verrins électrique avec encodeurs
