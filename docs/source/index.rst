@@ -8,11 +8,11 @@ Welcome to ETMI's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: ETMI:
 
    presentation
    install
-   Command_test
+   command_test
 
 
 
