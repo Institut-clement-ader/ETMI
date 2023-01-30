@@ -8,4 +8,4 @@ ETMI
 
 
 
-Proget d'asservisement de 4 verrins électrique avec encodeurs
+Projet d'asservisement de 4 vérins électriques avec encodeurs
