@@ -1,8 +1,8 @@
 Présentation
 ************
 
-Le projet consiste à contrôler 4 verrins électriques munis d'encodeurs.
-La partie commande sera fait à partir du raspberry Pi4 et d'un programme python.
+Le projet consiste à contrôler 4 verins électriques munis d'encodeurs.
+La partie commande sera faite à partir du raspberry Pi4 et d'un programme python.
 
-Schéma d'implatation des Input/Outpout sur la raspberry
+Schéma d'implémentation des Input/Outpout sur la raspberry
 =======================================================

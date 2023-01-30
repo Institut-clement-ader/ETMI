@@ -1,7 +1,7 @@
 Programme de test
 *****************
 
-Lancemant du programme
+Lancement du programme
 ======================
 
 Liste des Command_test

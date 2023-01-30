@@ -8,7 +8,7 @@ Welcome to ETMI's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Proget ETMI
+   :caption: Projet ETMI
 
    presentation
    install

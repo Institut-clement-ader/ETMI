@@ -1,4 +1,4 @@
-Generation de la documentation
+Génération de la documentation
 ==============================
 
 La documentation est généré à partir de fichier source ReStrucredText (fichier rst) sur le site Readthedocs.
