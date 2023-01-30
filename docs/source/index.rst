@@ -8,11 +8,17 @@ Welcome to ETMI's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: ETMI:
+   :caption: Proget ETMI
 
    presentation
    install
    command_test
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Annexe
+
+   generation_doc
 
 
 
