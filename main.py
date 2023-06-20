@@ -42,7 +42,7 @@ def main():
         else:
             drive_sens = 'sens <-'
 
-        print('Moteur ' + drive_etat + ' dans le '+drive_sens +
+        print('Moteur ' + drive_etat + ' dans le ' + drive_sens +
               ' à la fréquence : ' + str(freq) + 'Hz')
         print('Moteur 0 (arrêté) 1 (en marche)')
         print('Direction 10 (<-) 11 (->)')
