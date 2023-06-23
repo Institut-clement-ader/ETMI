@@ -11,10 +11,10 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>ETMI Pilotage</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="Stop">
+   <widget class="QPushButton" name="btnQuit">
     <property name="geometry">
      <rect>
       <x>710</x>
@@ -27,7 +27,7 @@
      <string>Quitter</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Lancer">
+   <widget class="QPushButton" name="btnRun">
     <property name="geometry">
      <rect>
       <x>710</x>
@@ -35,6 +35,9 @@
       <width>75</width>
       <height>24</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
      <string>Lancer</string>
@@ -56,7 +59,7 @@
     </property>
     <addaction name="actionOpenFile"/>
     <addaction name="separator"/>
-    <addaction name="actionStop"/>
+    <addaction name="actionQuit"/>
    </widget>
    <widget class="QMenu" name="menuAide">
     <property name="title">
@@ -85,7 +88,7 @@
     <string>Ouvrir un fichier</string>
    </property>
   </action>
-  <action name="actionStop">
+  <action name="actionQuit">
    <property name="text">
     <string>Quitter</string>
    </property>
@@ -104,23 +107,39 @@
  <resources/>
  <connections>
   <connection>
-   <sender>Stop</sender>
+   <sender>actionQuit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnQuit</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>744</x>
-     <y>564</y>
+     <x>757</x>
+     <y>565</y>
     </hint>
     <hint type="destinationlabel">
-     <x>790</x>
-     <y>-10</y>
+     <x>591</x>
+     <y>449</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
-  <slot>lancer()</slot>
+  <slot>quit()</slot>
  </slots>
 </ui>
