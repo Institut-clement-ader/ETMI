@@ -43,6 +43,65 @@
      <string>Lancer</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="btnManual">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>10</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(23, 227, 0);
+border:0;
+</string>
+    </property>
+    <property name="text">
+     <string>Manuel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnAuto">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>10</y>
+      <width>81</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(69, 69, 69);
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Automatique</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>230</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame{
+	border-radius: 8px;
+	
+	background-color: rgb(255, 61, 47);
+}
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
