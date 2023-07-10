@@ -50,9 +50,33 @@ class PmodJstk2:
         objectspi for library spidev
     spi_standard : bool
         select version frame communication
+
+
+    Methods
+    -------
+    spi_open
+        Open port spi
+    spi_close
+        Close port spi
+    send
+        Send command Joystick
+    read_data
+        Read data Joystick
+    show_data
+        Show all data
     """
 
     def __init__(self, spi_cs=0, spi_max_speed_hz=115200):
+        """Constructor
+
+        Parameters
+        ----------
+        spi_cs : int, optional
+            specified port Gpio select, by default 0
+        spi_max_speed_hz : int, optional
+            value max speed communication protocol spi, by default 115200
+        """
+
         self.x = 0
         self.y = 0
         self.trigger_joy_select = False
@@ -100,8 +124,8 @@ class PmodJstk2:
             print("Error of read")
 
     def read_data(self):
-        """ "Read data Joystick"""
-        recieved_message = [0] * 5
+        """Read data Joystick"""
+        recieved_message = [0] * 5  # initialize format
         recieved_message = self.send()
         self.x = recieved_message[0] + (recieved_message[1] << 8)
         self.y = recieved_message[2] + (recieved_message[3] << 8)
