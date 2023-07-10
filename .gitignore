@@ -14,4 +14,4 @@
 docs/build
 
 #apps ETMI_Gui
-apps/ETMI_Gui/__pycache__
+__pycache__/
