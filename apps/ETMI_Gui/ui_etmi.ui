@@ -100,9 +100,7 @@ color: rgb(255, 255, 255);</string>
      </size>
     </property>
     <property name="styleSheet">
-     <string notr="true">QFrame {
- background-color :rgb(85, 85, 255);
-}</string>
+     <string notr="true"/>
     </property>
     <property name="locale">
      <locale language="English" country="UnitedStates"/>

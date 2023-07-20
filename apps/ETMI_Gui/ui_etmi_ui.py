@@ -58,7 +58,7 @@ class Ui_MainWindow(object):
         self.led_joy_status.setGeometry(QRect(330, 170, 16, 16))
         self.led_joy_status.setMinimumSize(QSize(14, 14))
         self.led_joy_status.setMaximumSize(QSize(16, 16))
-        self.led_joy_status.
+        self.led_joy_status.setStyleSheet(u"")
         self.led_joy_status.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.led_joy_status.setFrameShape(QFrame.StyledPanel)
         self.led_joy_status.setFrameShadow(QFrame.Raised)

@@ -1,3 +1,8 @@
+/* :root {
+	--led_enabled: rgb(23, 227, 0);
+	--led_disabled: rgb(255, 61, 47);
+} */
+
 /* *[cssClass="ready"]	 {
 	border-radius: 8px;
 	background-color: rgb(23, 227, 0);
@@ -16,9 +21,11 @@ QFrame:hover{
 } */
 .led_enabled {
 		border-radius: 8px;
-		background-color: rgb(23, 227, 0);
+		/* background-color: var(--led_enabled); */
+		background-color: rgb(23, 227, 0)
 		} 
 .led_disabled {
 		border-radius: 8px;
+		/* background-color: var(--led_disabled); */
 		background-color: rgb(255, 61, 47);
 		} 
