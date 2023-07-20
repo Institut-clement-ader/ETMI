@@ -1,0 +1,24 @@
+/* *[cssClass="ready"]	 {
+	border-radius: 8px;
+	background-color: rgb(23, 227, 0);
+    }
+*[cssClass="no_ready"] {
+	border-radius: 8px;
+	background-color: rgb(255, 61, 47);
+    } */
+/* QFrame{
+	border-radius: 8px;
+	background-color: rgb(47, 255, 82);
+}
+QFrame:hover{
+	border-radius: 8px;
+	background-color: rgb(255, 61, 47);
+} */
+.led_enabled {
+		border-radius: 8px;
+		background-color: rgb(23, 227, 0);
+		} 
+.led_disabled {
+		border-radius: 8px;
+		background-color: rgb(255, 61, 47);
+		} 

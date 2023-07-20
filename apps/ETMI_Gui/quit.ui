@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>177</width>
-    <height>96</height>
+    <width>181</width>
+    <height>89</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -57,7 +57,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Voulez-vous quittez?</string>
+    <string>Voulez-vous quitter ?</string>
    </property>
   </widget>
  </widget>

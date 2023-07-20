@@ -23,7 +23,7 @@ class Ui_Dialog_Quit(object):
         if not Dialog_Quit.objectName():
             Dialog_Quit.setObjectName(u"Dialog_Quit")
         Dialog_Quit.setWindowModality(Qt.NonModal)
-        Dialog_Quit.resize(177, 96)
+        Dialog_Quit.resize(181, 89)
         Dialog_Quit.setLocale(QLocale(QLocale.French, QLocale.France))
         self.btn_quit = QDialogButtonBox(Dialog_Quit)
         self.btn_quit.setObjectName(u"btn_quit")
@@ -47,6 +47,6 @@ class Ui_Dialog_Quit(object):
 
     def retranslateUi(self, Dialog_Quit):
         Dialog_Quit.setWindowTitle(QCoreApplication.translate("Dialog_Quit", u"Fermeture", None))
-        self.lbl_quit.setText(QCoreApplication.translate("Dialog_Quit", u"Voulez-vous quittez?", None))
+        self.lbl_quit.setText(QCoreApplication.translate("Dialog_Quit", u"Voulez-vous quitter ?", None))
     # retranslateUi
 

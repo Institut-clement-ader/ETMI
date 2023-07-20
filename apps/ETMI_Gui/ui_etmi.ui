@@ -46,9 +46,9 @@
    <widget class="QPushButton" name="btnManual">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>10</y>
-      <width>75</width>
+      <x>20</x>
+      <y>100</y>
+      <width>81</width>
       <height>24</height>
      </rect>
     </property>
@@ -64,8 +64,8 @@ border:0;
    <widget class="QPushButton" name="btnAuto">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>10</y>
+      <x>20</x>
+      <y>130</y>
       <width>81</width>
       <height>24</height>
      </rect>
@@ -78,28 +78,87 @@ color: rgb(255, 255, 255);</string>
      <string>Automatique</string>
     </property>
    </widget>
-   <widget class="QFrame" name="frame">
+   <widget class="QFrame" name="led_joy_status">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>230</y>
+      <x>330</x>
+      <y>170</y>
       <width>16</width>
       <height>16</height>
      </rect>
     </property>
+    <property name="minimumSize">
+     <size>
+      <width>14</width>
+      <height>14</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16</width>
+      <height>16</height>
+     </size>
+    </property>
     <property name="styleSheet">
-     <string notr="true">QFrame{
-	border-radius: 8px;
-	
-	background-color: rgb(255, 61, 47);
-}
-</string>
+     <string notr="true">QFrame {
+ background-color :rgb(85, 85, 255);
+}</string>
+    </property>
+    <property name="locale">
+     <locale language="English" country="UnitedStates"/>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
     </property>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnAuto_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>160</y>
+      <width>81</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(69, 69, 69);
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Paramètres</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnAuto_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>190</y>
+      <width>81</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(69, 69, 69);
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Log</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_led">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>340</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Voyant</string>
     </property>
    </widget>
   </widget>
@@ -194,6 +253,22 @@ color: rgb(255, 255, 255);</string>
     <hint type="destinationlabel">
      <x>591</x>
      <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_led</sender>
+   <signal>clicked()</signal>
+   <receiver>led_joy_status</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>147</x>
+     <y>385</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>335</x>
+     <y>209</y>
     </hint>
    </hints>
   </connection>
