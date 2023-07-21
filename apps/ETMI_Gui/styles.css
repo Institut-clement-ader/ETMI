@@ -28,4 +28,7 @@ QFrame:hover{
 		border-radius: 8px;
 		/* background-color: var(--led_disabled); */
 		background-color: rgb(255, 61, 47);
-		} 
+		}
+.text{
+	background-color: rgb(255, 255, 255);
+}

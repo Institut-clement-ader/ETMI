@@ -16,9 +16,9 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QMainWindow, QMenu,
-    QMenuBar, QPushButton, QSizePolicy, QStatusBar,
-    QToolBar, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QLabel, QMainWindow,
+    QMenu, QMenuBar, QPushButton, QSizePolicy,
+    QStatusBar, QToolBar, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -35,46 +35,81 @@ class Ui_MainWindow(object):
         self.actionHelp.setObjectName(u"actionHelp")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.btnQuit = QPushButton(self.centralwidget)
-        self.btnQuit.setObjectName(u"btnQuit")
-        self.btnQuit.setGeometry(QRect(710, 520, 75, 24))
-        self.btnRun = QPushButton(self.centralwidget)
-        self.btnRun.setObjectName(u"btnRun")
-        self.btnRun.setGeometry(QRect(710, 480, 75, 24))
-        self.btnRun.setFocusPolicy(Qt.NoFocus)
-        self.btnManual = QPushButton(self.centralwidget)
-        self.btnManual.setObjectName(u"btnManual")
-        self.btnManual.setGeometry(QRect(20, 100, 81, 24))
-        self.btnManual.setStyleSheet(u"background-color: rgb(23, 227, 0);\n"
+        self.btn_quit = QPushButton(self.centralwidget)
+        self.btn_quit.setObjectName(u"btn_quit")
+        self.btn_quit.setGeometry(QRect(710, 510, 75, 24))
+        self.btn_run = QPushButton(self.centralwidget)
+        self.btn_run.setObjectName(u"btn_run")
+        self.btn_run.setGeometry(QRect(710, 470, 75, 24))
+        self.btn_run.setFocusPolicy(Qt.NoFocus)
+        self.btn_manual = QPushButton(self.centralwidget)
+        self.btn_manual.setObjectName(u"btn_manual")
+        self.btn_manual.setGeometry(QRect(20, 100, 81, 24))
+        self.btn_manual.setStyleSheet(u"background-color: rgb(23, 227, 0);\n"
 "border:0;\n"
 "")
-        self.btnAuto = QPushButton(self.centralwidget)
-        self.btnAuto.setObjectName(u"btnAuto")
-        self.btnAuto.setGeometry(QRect(20, 130, 81, 24))
-        self.btnAuto.setStyleSheet(u"background-color: rgb(69, 69, 69);\n"
+        self.btn_auto = QPushButton(self.centralwidget)
+        self.btn_auto.setObjectName(u"btn_auto")
+        self.btn_auto.setGeometry(QRect(20, 130, 81, 24))
+        self.btn_auto.setStyleSheet(u"background-color: rgb(69, 69, 69);\n"
 "color: rgb(255, 255, 255);")
         self.led_joy_status = QFrame(self.centralwidget)
         self.led_joy_status.setObjectName(u"led_joy_status")
-        self.led_joy_status.setGeometry(QRect(330, 170, 16, 16))
+        self.led_joy_status.setGeometry(QRect(300, 170, 16, 16))
         self.led_joy_status.setMinimumSize(QSize(14, 14))
         self.led_joy_status.setMaximumSize(QSize(16, 16))
-        self.led_joy_status.setStyleSheet(u"")
+        self.led_joy_status.setStyleSheet(u"background-color: rgb(85, 255, 0);\n"
+"border-radius: 8px;\n"
+"")
         self.led_joy_status.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.led_joy_status.setFrameShape(QFrame.StyledPanel)
         self.led_joy_status.setFrameShadow(QFrame.Raised)
-        self.btnAuto_2 = QPushButton(self.centralwidget)
-        self.btnAuto_2.setObjectName(u"btnAuto_2")
-        self.btnAuto_2.setGeometry(QRect(20, 160, 81, 24))
-        self.btnAuto_2.setStyleSheet(u"background-color: rgb(69, 69, 69);\n"
+        self.btn_parameters = QPushButton(self.centralwidget)
+        self.btn_parameters.setObjectName(u"btn_parameters")
+        self.btn_parameters.setGeometry(QRect(20, 160, 81, 24))
+        self.btn_parameters.setStyleSheet(u"background-color: rgb(69, 69, 69);\n"
 "color: rgb(255, 255, 255);")
-        self.btnAuto_3 = QPushButton(self.centralwidget)
-        self.btnAuto_3.setObjectName(u"btnAuto_3")
-        self.btnAuto_3.setGeometry(QRect(20, 190, 81, 24))
-        self.btnAuto_3.setStyleSheet(u"background-color: rgb(69, 69, 69);\n"
+        self.btn_logs = QPushButton(self.centralwidget)
+        self.btn_logs.setObjectName(u"btn_logs")
+        self.btn_logs.setGeometry(QRect(20, 190, 81, 24))
+        self.btn_logs.setStyleSheet(u"background-color: rgb(69, 69, 69);\n"
 "color: rgb(255, 255, 255);")
         self.btn_led = QPushButton(self.centralwidget)
         self.btn_led.setObjectName(u"btn_led")
         self.btn_led.setGeometry(QRect(110, 340, 75, 24))
+        self.led_joy_trig_status = QFrame(self.centralwidget)
+        self.led_joy_trig_status.setObjectName(u"led_joy_trig_status")
+        self.led_joy_trig_status.setGeometry(QRect(300, 200, 16, 16))
+        self.led_joy_trig_status.setMinimumSize(QSize(14, 14))
+        self.led_joy_trig_status.setMaximumSize(QSize(16, 16))
+        self.led_joy_trig_status.setStyleSheet(u"background-color: rgb(85, 255, 0);\n"
+"border-radius: 8px;\n"
+"")
+        self.led_joy_trig_status.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
+        self.led_joy_trig_status.setFrameShape(QFrame.StyledPanel)
+        self.led_joy_trig_status.setFrameShadow(QFrame.Raised)
+        self.lbl_led_status = QLabel(self.centralwidget)
+        self.lbl_led_status.setObjectName(u"lbl_led_status")
+        self.lbl_led_status.setGeometry(QRect(240, 170, 51, 16))
+        self.lbl_led_trig_status = QLabel(self.centralwidget)
+        self.lbl_led_trig_status.setObjectName(u"lbl_led_trig_status")
+        self.lbl_led_trig_status.setGeometry(QRect(240, 200, 61, 16))
+        self.lbl_x = QLabel(self.centralwidget)
+        self.lbl_x.setObjectName(u"lbl_x")
+        self.lbl_x.setGeometry(QRect(240, 230, 51, 16))
+        self.lbl_y = QLabel(self.centralwidget)
+        self.lbl_y.setObjectName(u"lbl_y")
+        self.lbl_y.setGeometry(QRect(240, 250, 51, 16))
+        self.display_x = QLabel(self.centralwidget)
+        self.display_x.setObjectName(u"display_x")
+        self.display_x.setGeometry(QRect(300, 230, 49, 16))
+        self.display_x.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"")
+        self.display_y = QLabel(self.centralwidget)
+        self.display_y.setObjectName(u"display_y")
+        self.display_y.setGeometry(QRect(300, 250, 49, 16))
+        self.display_y.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -101,8 +136,9 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.actionQuit.triggered.connect(MainWindow.close)
-        self.btnQuit.clicked.connect(MainWindow.close)
-        self.btn_led.clicked.connect(self.led_joy_status.update)
+        self.btn_quit.clicked.connect(MainWindow.close)
+        self.btn_manual.clicked.connect(MainWindow.manual)
+        self.btn_auto.clicked.connect(MainWindow.auto)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
@@ -113,13 +149,19 @@ class Ui_MainWindow(object):
         self.actionQuit.setText(QCoreApplication.translate("MainWindow", u"Quitter", None))
         self.actionAbout.setText(QCoreApplication.translate("MainWindow", u"A propos de...", None))
         self.actionHelp.setText(QCoreApplication.translate("MainWindow", u"Aide", None))
-        self.btnQuit.setText(QCoreApplication.translate("MainWindow", u"Quitter", None))
-        self.btnRun.setText(QCoreApplication.translate("MainWindow", u"Lancer", None))
-        self.btnManual.setText(QCoreApplication.translate("MainWindow", u"Manuel", None))
-        self.btnAuto.setText(QCoreApplication.translate("MainWindow", u"Automatique", None))
-        self.btnAuto_2.setText(QCoreApplication.translate("MainWindow", u"Param\u00e8tres", None))
-        self.btnAuto_3.setText(QCoreApplication.translate("MainWindow", u"Log", None))
+        self.btn_quit.setText(QCoreApplication.translate("MainWindow", u"Quitter", None))
+        self.btn_run.setText(QCoreApplication.translate("MainWindow", u"Lancer", None))
+        self.btn_manual.setText(QCoreApplication.translate("MainWindow", u"Manuel", None))
+        self.btn_auto.setText(QCoreApplication.translate("MainWindow", u"Automatique", None))
+        self.btn_parameters.setText(QCoreApplication.translate("MainWindow", u"Param\u00e8tres", None))
+        self.btn_logs.setText(QCoreApplication.translate("MainWindow", u"Log", None))
         self.btn_led.setText(QCoreApplication.translate("MainWindow", u"Voyant", None))
+        self.lbl_led_status.setText(QCoreApplication.translate("MainWindow", u"Joystick", None))
+        self.lbl_led_trig_status.setText(QCoreApplication.translate("MainWindow", u"Gachette", None))
+        self.lbl_x.setText(QCoreApplication.translate("MainWindow", u"Coord. X", None))
+        self.lbl_y.setText(QCoreApplication.translate("MainWindow", u"Coord. Y", None))
+        self.display_x.setText("")
+        self.display_y.setText("")
         self.menuFichier.setTitle(QCoreApplication.translate("MainWindow", u"Fichier", None))
         self.menuAide.setTitle(QCoreApplication.translate("MainWindow", u"Aide", None))
         self.toolBar.setWindowTitle(QCoreApplication.translate("MainWindow", u"toolBar", None))

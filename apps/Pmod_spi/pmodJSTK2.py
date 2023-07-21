@@ -210,6 +210,7 @@ class PmodJstk2:
 
     def initialize(self):
         """Send cmd and read the coordinate values use only with protocol 2"""
+        # try:
         standard_save = self.spi_standard
         self.spi_standard = False
         self.x_min = self._extract_value(self.send_cmd(CMD_GET_CAL_X_MIN), 2)
@@ -221,6 +222,11 @@ class PmodJstk2:
         self.y_cen_min = self._extract_value(self.send_cmd(CMD_GET_CAL_Y_CEN_MIN), 2)
         self.y_cen_max = self._extract_value(self.send_cmd(CMD_GET_CAL_Y_CEN_MAX), 2)
         self.spi_standard = standard_save
+
+    #     return True
+    # except TypeError as err:
+    #     print("communication with the peripheral is no longer active.", err)
+    #     return False
 
     def _extract_value(self, data, byte_amount):
         """Extract the bytes from the data
