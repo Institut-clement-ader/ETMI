@@ -1,9 +1,23 @@
 # -*- coding: utf-8 -*-
 import sys
+import os
+import datetime
 
-sys.path.append("../Pmod_spi")
+# getting the name of the directory
+# where the this file is present.
+current = os.path.dirname(os.path.realpath(__file__))
+
+# Getting the parent directory name
+# where the current directory is present.
+parent = os.path.dirname(current)
+
+# adding the parent directory to
+# the sys.path.
+sys.path.append(parent)
+
 # import threading
 # import asyncio
+sys.path.append("../Pmod_spi")
 from pathlib import Path
 from PySide6.QtWidgets import (
     QApplication,
@@ -18,8 +32,12 @@ from PySide6.QtCore import QFile, Slot, Signal, QThread
 from ui_etmi_ui import Ui_MainWindow
 from quit_ui import Ui_Dialog_Quit
 from color import *
-from components import Led, Label, Text
-from pmodJSTK2 import PmodJstk2
+from components_ui import Led, Label, Text
+from Pmod_spi.pmodJSTK2 import PmodJstk2
+from drives import Drive, ManageDrives, config
+
+test = True
+path_css = "./css/styles.css"
 
 
 class JoyThread(QThread):
@@ -29,6 +47,7 @@ class JoyThread(QThread):
     def __init__(self, joy):
         QThread.__init__(self)
         self.joy = joy
+        self.is_running = False
 
     def run(self):
         self.joy.initialize()
@@ -42,16 +61,16 @@ class ManualThread(QThread):
     def __init__(self, joy):
         QThread.__init__(self)
         self.joy = joy
-        self.isRunning = False
+        # # self.is_running = False
 
     def run(self):
-        self.isRunning = True
-        while self.isRunning:
+        self.is_running = True
+        while self.is_running:
             self.joy.read_data()
             self.progress.emit(True)  # Send signal.
 
     def stop(self):
-        self.isRunning = False
+        # # self.is_running = False
         self.quit()
         self.terminate()
 
@@ -62,7 +81,6 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.btn_run.clicked.connect(self.run)
-        self.ui.btn_led.clicked.connect(self.btn_led_clicked)
         # self.ui.btnQuit.clicked.connect(self.quit)
         # self.ui.actionQuit.triggered.connect(self.quit)
         self.led_joy_status = Led(self.ui.led_joy_status)
@@ -75,6 +93,10 @@ class MainWindow(QMainWindow):
         self.th_joy.progress.connect(self.update_led_joy_status)
         self.th_joy_manual = ManualThread(self.joy)
         self.th_joy_manual.progress.connect(self.display_joy)
+        self.init_joy()
+        # drives
+        self.checked_drives()
+        self.drives = ManageDrives()
 
     @Slot()
     def run(self):
@@ -86,7 +108,7 @@ class MainWindow(QMainWindow):
     @Slot()
     def btn_led_clicked(self):
         self.led_joy_status.enabled = not self.led_joy_status.enabled
-        self.led_joy_status.update()
+        # self.led_joy_status.update()
 
     @Slot()
     def manual(self):
@@ -96,12 +118,24 @@ class MainWindow(QMainWindow):
     def auto(self):
         self.th_joy_manual.stop()
 
+    @Slot()
+    def checked_drives(self):
+        self.ui.btn_left_1.setEnabled(self.ui.chk_drive1.isChecked())
+        self.ui.btn_left_2.setEnabled(self.ui.chk_drive2.isChecked())
+        self.ui.btn_left_3.setEnabled(self.ui.chk_drive3.isChecked())
+        self.ui.btn_left_4.setEnabled(self.ui.chk_drive4.isChecked())
+        self.ui.btn_right_1.setEnabled(self.ui.chk_drive1.isChecked())
+        self.ui.btn_right_2.setEnabled(self.ui.chk_drive2.isChecked())
+        self.ui.btn_right_3.setEnabled(self.ui.chk_drive3.isChecked())
+        self.ui.btn_right_4.setEnabled(self.ui.chk_drive4.isChecked())
+
     def closeEvent(self, eventQCloseEvent):
         dlb = QuitDlg()
         reply = dlb.exec()
         if reply == QDialog.DialogCode.Accepted:
             self.joy.spi_close()
             self.th_joy_manual.stop()
+            self.drives.gpio_clean()
             eventQCloseEvent.accept()
         else:
             eventQCloseEvent.ignore()
@@ -123,6 +157,10 @@ class MainWindow(QMainWindow):
         self.led_joy_trig_status.enabled = self.joy.trigger_select
         self.led_joy_trig_status.update()
 
+    def add_log(self, text):
+        now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        self.ui.txt_logs.append(str(now) + ": " + text)
+
 
 class QuitDlg(QDialog):
     def __init__(self, parent=None):
@@ -132,8 +170,9 @@ class QuitDlg(QDialog):
 
 
 if __name__ == "__main__":
+    config()
     app = QApplication(sys.argv)
-    app.setStyleSheet(Path("./styles.css").read_text())
+    app.setStyleSheet(Path(path_css).read_text())
     window = MainWindow()
 
     window.show()

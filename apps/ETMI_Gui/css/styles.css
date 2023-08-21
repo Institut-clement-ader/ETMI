@@ -20,12 +20,12 @@ QFrame:hover{
 	background-color: rgb(255, 61, 47);
 } */
 .led_enabled {
-		border-radius: 8px;
+		border-radius: 7px;
 		/* background-color: var(--led_enabled); */
 		background-color: rgb(23, 227, 0)
 		} 
 .led_disabled {
-		border-radius: 8px;
+		border-radius: 7px;
 		/* background-color: var(--led_disabled); */
 		background-color: rgb(255, 61, 47);
 		}

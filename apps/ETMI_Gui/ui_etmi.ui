@@ -6,106 +6,98 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>845</width>
     <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>ETMI Pilotage</string>
   </property>
+  <property name="toolTipDuration">
+   <number>5</number>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="btn_quit">
+   <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>510</y>
-      <width>75</width>
-      <height>24</height>
+      <x>0</x>
+      <y>80</y>
+      <width>101</width>
+      <height>176</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Quitter</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_run">
-    <property name="geometry">
-     <rect>
-      <x>710</x>
-      <y>470</y>
-      <width>75</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="focusPolicy">
-     <enum>Qt::NoFocus</enum>
-    </property>
-    <property name="text">
-     <string>Lancer</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_manual">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>100</y>
-      <width>81</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(23, 227, 0);
-border:0;
-</string>
-    </property>
-    <property name="text">
-     <string>Manuel</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_auto">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>130</y>
-      <width>81</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(69, 69, 69);
+    <layout class="QVBoxLayout" name="layout_menu_left">
+     <item>
+      <widget class="QPushButton" name="btn_auto">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(69, 69, 69);
 color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Automatique</string>
-    </property>
+       </property>
+       <property name="text">
+        <string>Automatique</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_parameters">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(69, 69, 69);
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Paramètres</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_manual">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(23, 227, 0);
+</string>
+       </property>
+       <property name="text">
+        <string>Manuel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_logs">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(69, 69, 69);
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Log</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_run">
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Lancer</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_quit">
+       <property name="text">
+        <string>Quitter</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
-   <widget class="QFrame" name="led_joy_status">
+   <widget class="QFrame" name="frm_manual">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>170</y>
-      <width>16</width>
-      <height>16</height>
+      <x>100</x>
+      <y>20</y>
+      <width>701</width>
+      <height>351</height>
      </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>14</width>
-      <height>14</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>16</width>
-      <height>16</height>
-     </size>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(85, 255, 0);
-border-radius: 8px;
-</string>
-    </property>
-    <property name="locale">
-     <locale language="English" country="UnitedStates"/>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -113,174 +105,456 @@ border-radius: 8px;
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-   </widget>
-   <widget class="QPushButton" name="btn_parameters">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>160</y>
-      <width>81</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(69, 69, 69);
-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Paramètres</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_logs">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>190</y>
-      <width>81</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(69, 69, 69);
-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Log</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_led">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>340</y>
-      <width>75</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Voyant</string>
-    </property>
-   </widget>
-   <widget class="QFrame" name="led_joy_trig_status">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>200</y>
-      <width>16</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>14</width>
-      <height>14</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>16</width>
-      <height>16</height>
-     </size>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(85, 255, 0);
-border-radius: 8px;
+    <widget class="QWidget" name="gridLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>60</y>
+       <width>91</width>
+       <height>84</height>
+      </rect>
+     </property>
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="lbl_led_status">
+        <property name="text">
+         <string>Joystick</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="lbl_led_trig_status">
+        <property name="text">
+         <string>Gachette</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="lbl_x">
+        <property name="text">
+         <string>Coord. X</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="display_x">
+        <property name="baseSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
 </string>
-    </property>
-    <property name="locale">
-     <locale language="English" country="UnitedStates"/>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lbl_led_status">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>170</y>
-      <width>51</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Joystick</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lbl_led_trig_status">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>200</y>
-      <width>61</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Gachette</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lbl_x">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>230</y>
-      <width>51</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Coord. X</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lbl_y">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>250</y>
-      <width>51</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Coord. Y</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="display_x">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>230</y>
-      <width>49</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="lbl_y">
+        <property name="text">
+         <string>Coord. Y</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLabel" name="display_y">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
 </string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QFrame" name="led_joy_status">
+        <property name="minimumSize">
+         <size>
+          <width>14</width>
+          <height>14</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>15</width>
+          <height>15</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(85, 255, 0);
+border-radius: 7px;
+</string>
+        </property>
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Plain</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QFrame" name="led_joy_trig_status">
+        <property name="maximumSize">
+         <size>
+          <width>15</width>
+          <height>15</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(85, 255, 0);
+border-radius: 7px;
+</string>
+        </property>
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="gridLayoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>170</y>
+       <width>101</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="grid_layout_btn_dir">
+      <item row="1" column="0">
+       <widget class="QToolButton" name="btn_left_2">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>images/svg/chevron-circle-left-svgrepo-com.svg</normaloff>images/svg/chevron-circle-left-svgrepo-com.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QToolButton" name="btn_right_2">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>images/svg/chevron-circle-right-svgrepo-com.svg</normaloff>images/svg/chevron-circle-right-svgrepo-com.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QToolButton" name="btn_left_3">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>images/svg/chevron-circle-left-svgrepo-com.svg</normaloff>images/svg/chevron-circle-left-svgrepo-com.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QToolButton" name="btn_right_1">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>images/svg/chevron-circle-right-svgrepo-com.svg</normaloff>images/svg/chevron-circle-right-svgrepo-com.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QToolButton" name="btn_right_3">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>images/svg/chevron-circle-right-svgrepo-com.svg</normaloff>images/svg/chevron-circle-right-svgrepo-com.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QToolButton" name="btn_left_1">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>images/svg/chevron-circle-left-svgrepo-com.svg</normaloff>images/svg/chevron-circle-left-svgrepo-com.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QToolButton" name="btn_left_4">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>images/svg/chevron-circle-left-svgrepo-com.svg</normaloff>images/svg/chevron-circle-left-svgrepo-com.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QToolButton" name="btn_right_4">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>images/svg/chevron-circle-right-svgrepo-com.svg</normaloff>images/svg/chevron-circle-right-svgrepo-com.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="verticalLayoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>170</y>
+       <width>71</width>
+       <height>100</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="layout_choice_drive">
+      <item>
+       <widget class="QCheckBox" name="chk_drive1">
+        <property name="text">
+         <string>Drive 1</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="chk_drive2">
+        <property name="text">
+         <string>Drive 2</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="chk_drive3">
+        <property name="text">
+         <string>Drive 3</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="chk_drive4">
+        <property name="text">
+         <string>Drive 4</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
-   <widget class="QLabel" name="display_y">
+   <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>250</y>
-      <width>49</width>
-      <height>16</height>
+      <x>100</x>
+      <y>0</y>
+      <width>701</width>
+      <height>34</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-</string>
+    <layout class="QHBoxLayout" name="layout_display_up">
+     <item>
+      <widget class="QLabel" name="lbl_drive1">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Drive 1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="txt_drive1">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lbl_drive2">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Drive 2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="txt_drive2">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lbl_drive3">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Drive 3&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="txt_drive3">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lbl_drive4">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Drive 4&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="txt_drive4">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QTextEdit" name="txt_logs">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>460</y>
+      <width>701</width>
+      <height>71</height>
+     </rect>
     </property>
-    <property name="text">
-     <string/>
+    <property name="readOnly">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
@@ -289,7 +563,7 @@ border-radius: 8px;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>845</width>
      <height>22</height>
     </rect>
    </property>
@@ -344,6 +618,25 @@ border-radius: 8px;
    </property>
   </action>
  </widget>
+ <tabstops>
+  <tabstop>btn_quit</tabstop>
+  <tabstop>btn_logs</tabstop>
+  <tabstop>btn_manual</tabstop>
+  <tabstop>btn_parameters</tabstop>
+  <tabstop>btn_auto</tabstop>
+  <tabstop>chk_drive1</tabstop>
+  <tabstop>chk_drive2</tabstop>
+  <tabstop>chk_drive3</tabstop>
+  <tabstop>chk_drive4</tabstop>
+  <tabstop>btn_left_1</tabstop>
+  <tabstop>btn_right_1</tabstop>
+  <tabstop>btn_left_2</tabstop>
+  <tabstop>btn_right_2</tabstop>
+  <tabstop>btn_left_3</tabstop>
+  <tabstop>btn_right_3</tabstop>
+  <tabstop>btn_left_4</tabstop>
+  <tabstop>btn_right_4</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
@@ -369,8 +662,8 @@ border-radius: 8px;
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>757</x>
-     <y>565</y>
+     <x>48</x>
+     <y>278</y>
     </hint>
     <hint type="destinationlabel">
      <x>591</x>
@@ -385,8 +678,8 @@ border-radius: 8px;
    <slot>manual()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>62</x>
-     <y>140</y>
+     <x>43</x>
+     <y>181</y>
     </hint>
     <hint type="destinationlabel">
      <x>207</x>
@@ -401,12 +694,76 @@ border-radius: 8px;
    <slot>auto()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>91</x>
-     <y>177</y>
+     <x>72</x>
+     <y>128</y>
     </hint>
     <hint type="destinationlabel">
      <x>252</x>
      <y>152</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chk_drive4</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>checked_drives()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>701</x>
+     <y>316</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>58</x>
+     <y>572</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chk_drive2</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>checked_drives()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>685</x>
+     <y>268</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>30</x>
+     <y>523</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chk_drive1</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>checked_drives()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>655</x>
+     <y>234</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>50</x>
+     <y>496</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chk_drive3</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>checked_drives()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>675</x>
+     <y>287</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>22</x>
+     <y>552</y>
     </hint>
    </hints>
   </connection>
@@ -415,5 +772,6 @@ border-radius: 8px;
   <slot>quit()</slot>
   <slot>manual()</slot>
   <slot>auto()</slot>
+  <slot>checked_drives()</slot>
  </slots>
 </ui>
