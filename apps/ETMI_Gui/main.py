@@ -34,7 +34,7 @@ from quit_ui import Ui_Dialog_Quit
 from color import *
 from components_ui import Led, Label, Text
 from Pmod_spi.pmodJSTK2 import PmodJstk2
-from drives import Drive, ManageDrives, config
+from drives import Drive, ManageDrives, config, DIR_POSITIF, DIR_NEGATIF
 
 test = True
 path_css = "./css/styles.css"
@@ -95,8 +95,8 @@ class MainWindow(QMainWindow):
         self.th_joy_manual.progress.connect(self.display_joy)
         self.init_joy()
         # drives
+        self.manage_drives = ManageDrives()
         self.checked_drives()
-        self.drives = ManageDrives()
 
     @Slot()
     def run(self):
@@ -128,6 +128,52 @@ class MainWindow(QMainWindow):
         self.ui.btn_right_2.setEnabled(self.ui.chk_drive2.isChecked())
         self.ui.btn_right_3.setEnabled(self.ui.chk_drive3.isChecked())
         self.ui.btn_right_4.setEnabled(self.ui.chk_drive4.isChecked())
+        # if self.ui.chk_drive1.isChecked():
+        #     self.manage_drives.drives[0].start()
+        # else:
+        #     self.manage_drives.drives[0].stop()
+        # if self.ui.chk_drive2.isChecked():
+        #     self.manage_drives.drives[1].start()
+        # else:
+        #     self.manage_drives.drives[1].stop()
+        # if self.ui.chk_drive3.isChecked():
+        #     self.manage_drives.drives[2].start()
+        # else:
+        #     self.manage_drives.drives[2].stop()
+        # if self.ui.chk_drive4.isChecked():
+        #     self.manage_drives.drives[3].start()
+        # else:
+        #     self.manage_drives.drives[3].stop()
+
+    @Slot()
+    def action_drives(self):
+        if self.ui.btn_left_1.isDown():
+            self.manage_drives.drives[0].start(DIR_POSITIF)
+        elif self.ui.btn_right_1.isDown():
+            self.manage_drives.drives[0].start(DIR_NEGATIF)
+        else:
+            self.manage_drives.drives[0].stop()
+
+        if self.ui.btn_left_2.isDown():
+            self.manage_drives.drives[1].start(DIR_POSITIF)
+        elif self.ui.btn_right_2.isDown():
+            self.manage_drives.drives[1].start(DIR_NEGATIF)
+        else:
+            self.manage_drives.drives[1].stop()
+
+        if self.ui.btn_left_3.isDown():
+            self.manage_drives.drives[2].start(DIR_POSITIF)
+        elif self.ui.btn_right_3.isDown():
+            self.manage_drives.drives[2].start(DIR_NEGATIF)
+        else:
+            self.manage_drives.drives[2].stop()
+
+        if self.ui.btn_left_4.isDown():
+            self.manage_drives.drives[3].start(DIR_POSITIF)
+        elif self.ui.btn_right_4.isDown():
+            self.manage_drives.drives[3].start(DIR_NEGATIF)
+        else:
+            self.manage_drives.drives[3].stop()
 
     def closeEvent(self, eventQCloseEvent):
         dlb = QuitDlg()
@@ -135,7 +181,7 @@ class MainWindow(QMainWindow):
         if reply == QDialog.DialogCode.Accepted:
             self.joy.spi_close()
             self.th_joy_manual.stop()
-            self.drives.gpio_clean()
+            self.manage_drives.gpio_clean()
             eventQCloseEvent.accept()
         else:
             eventQCloseEvent.ignore()

@@ -27,6 +27,9 @@ class Ui_MainWindow(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(845, 600)
+        MainWindow.setMaximumSize(QSize(16777215, 16777215))
+        MainWindow.setBaseSize(QSize(1, 5))
+        MainWindow.setWindowOpacity(5.000000000000000)
         MainWindow.setToolTipDuration(5)
         self.actionOpenFile = QAction(MainWindow)
         self.actionOpenFile.setObjectName(u"actionOpenFile")
@@ -146,7 +149,7 @@ class Ui_MainWindow(object):
         self.led_joy_trig_status.setObjectName(u"led_joy_trig_status")
         self.led_joy_trig_status.setMaximumSize(QSize(15, 15))
         self.led_joy_trig_status.setStyleSheet(u"background-color: rgb(85, 255, 0);\n"
-"border-radius: 8px;\n"
+"border-radius: 7px;\n"
 "")
         self.led_joy_trig_status.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.led_joy_trig_status.setFrameShape(QFrame.StyledPanel)
@@ -365,6 +368,23 @@ class Ui_MainWindow(object):
         self.chk_drive2.stateChanged.connect(MainWindow.checked_drives)
         self.chk_drive1.stateChanged.connect(MainWindow.checked_drives)
         self.chk_drive3.stateChanged.connect(MainWindow.checked_drives)
+        self.btn_right_1.pressed.connect(MainWindow.action_drives)
+        self.btn_right_1.released.connect(MainWindow.action_drives)
+        self.btn_left_1.pressed.connect(MainWindow.action_drives)
+        self.btn_left_1.released.connect(MainWindow.action_drives)
+        self.btn_right_2.pressed.connect(MainWindow.action_drives)
+        self.btn_right_2.released.connect(MainWindow.action_drives)
+        self.btn_left_2.pressed.connect(MainWindow.action_drives)
+        self.btn_left_2.released.connect(MainWindow.action_drives)
+        self.btn_left_3.pressed.connect(MainWindow.action_drives)
+        self.btn_left_3.released.connect(MainWindow.action_drives)
+        self.btn_right_3.pressed.connect(MainWindow.action_drives)
+        self.btn_right_3.released.connect(MainWindow.action_drives)
+        self.btn_left_4.pressed.connect(MainWindow.action_drives)
+        self.btn_left_4.released.connect(MainWindow.action_drives)
+        self.btn_right_4.released.connect(MainWindow.action_drives)
+        self.btn_right_4.pressed.connect(MainWindow.action_drives)
+        self.btn_right_4.released.connect(MainWindow.action_drives)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
