@@ -37,6 +37,7 @@ class Drive:
     def start(self, dir):
         self.set_dir(dir)
         self.enabled = DRIVE_ENABLED
+        self.set_frequency(self.frequency)
         self.pulse.start(DUTY_CYCLE)
         gpio.output(self.pin_en, DRIVE_ENABLED)
 
@@ -49,6 +50,7 @@ class Drive:
         gpio.output(self.pin_dir, dir)
 
     def set_frequency(self, freq):
+        self.freqeuncy = freq
         self.pulse.ChangeFrequency(freq)
 
 

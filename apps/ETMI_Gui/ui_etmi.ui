@@ -109,9 +109,9 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>20</y>
+      <y>30</y>
       <width>701</width>
-      <height>351</height>
+      <height>361</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -248,7 +248,7 @@ border-radius: 7px;
        <x>240</x>
        <y>170</y>
        <width>101</width>
-       <height>151</height>
+       <height>156</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="grid_layout_btn_dir">
@@ -478,6 +478,59 @@ border-radius: 7px;
       </item>
      </layout>
     </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>140</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Vitesse (mm/s)</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txt_speed1">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>180</y>
+       <width>41</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txt_speed_2">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>220</y>
+       <width>41</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txt_speed_4">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>300</y>
+       <width>41</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txt_speed_3">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>260</y>
+       <width>41</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
@@ -485,7 +538,7 @@ border-radius: 7px;
       <x>100</x>
       <y>0</y>
       <width>701</width>
-      <height>34</height>
+      <height>31</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="layout_display_up">
