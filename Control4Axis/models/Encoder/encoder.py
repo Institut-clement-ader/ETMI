@@ -26,6 +26,7 @@ __version__ = "0.0.1"
 from pymodbus.client import ModbusTcpClient  # Pour le client Modbus TCP
 from pymodbus.exceptions import ConnectionException
 import struct
+from argparse import ArgumentParser
 
 
 class Encoder:
@@ -61,6 +62,7 @@ class Encoder:
         self.ip = ip
         self.port = 502
         self.state = 0
+        self.connected = False
         self.display_value = 0.0
         self.display_value_lsb = 0
         self.display_value_msb = 0
@@ -70,9 +72,17 @@ class Encoder:
         self.raw_value = 0
         self.raw_value_lsb = 0
         self.raw_value_msb = 0
+        self.connect()
+
+
+    def connect(self):
         try:
-            self.client = ModbusTcpClient(self.ip)
+            self.client = ModbusTcpClient(str(self.ip))
             self.client.connect()
+            if self.client.connected:
+                self.connected = True
+            else:
+                self.connected = False
         except ConnectionException as e:
             print("Erreur de connexion : ", str(e))
 
@@ -148,7 +158,60 @@ class Encoder:
 
 
 if __name__ == "__main__":
-    ip = input("insert IP:")
-    encoder = Encoder(ip)
-    encoder.read()
-    print(encoder.__dict__)
+    
+    encoders = []
+    parser = ArgumentParser(prog="Encoder", description="Test Encoders", epilog="2024")
+
+    # Add more options if you like
+    parser.add_argument(
+        "-i",
+        "--input",
+        nargs="+",
+        default="192.168.7.51",
+        dest="ip",
+        help="entrer IP encoder",
+        metavar="IP",
+    )
+    
+    # All encoders
+    parser.add_argument(
+        "-a",
+        "--all",
+        dest="encoders",
+        nargs=4,
+        help="all encoders",
+        metavar="IP"
+    )
+    
+        # All encoders
+    parser.add_argument(
+        "-r",
+        "--read",
+        dest="read",
+        default=True,
+        help="all encoders",
+        metavar=""
+    )
+    
+    
+
+    args = parser.parse_args()
+    if args.ip:
+        for index, ip in enumerate(args.ip):
+            encoders.append(Encoder(ip))
+            encoder = encoders[index]
+            if encoder.connected:
+                encoder.read()
+            print(encoder.__dict__)
+    elif args.encoders:
+        for index, ip in enumerate(args.encoders):
+            encoders.append(Encoder(ip))
+            encoder = encoders[index]
+            if encoder.connected:
+                encoder.read()
+            print(encoder.__dict__)
+    
+    for encoder in encoders:
+        if encoder.connected:
+            encoder.close()
+            print("Encoders closed " + encoder.ip)

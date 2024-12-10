@@ -177,6 +177,9 @@ color: rgb(255, 255, 255);</string>
       </item>
       <item row="3" column="1">
        <widget class="QLabel" name="display_y">
+        <property name="focusPolicy">
+         <enum>Qt::WheelFocus</enum>
+        </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(255, 255, 255);
 </string>
@@ -538,7 +541,7 @@ border-radius: 7px;
       <x>100</x>
       <y>0</y>
       <width>701</width>
-      <height>31</height>
+      <height>34</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="layout_display_up">
@@ -555,7 +558,7 @@ border-radius: 7px;
         <string notr="true">background-color: rgb(255, 255, 255);</string>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string/>
        </property>
       </widget>
      </item>
