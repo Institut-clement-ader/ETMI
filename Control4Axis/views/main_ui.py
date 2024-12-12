@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'ui_etmi.ui'
+## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.0
+## Created by: Qt User Interface Compiler version 6.8.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -77,7 +77,7 @@ class Ui_MainWindow(object):
 
         self.btn_run = QPushButton(self.verticalLayoutWidget)
         self.btn_run.setObjectName(u"btn_run")
-        self.btn_run.setFocusPolicy(Qt.NoFocus)
+        self.btn_run.setFocusPolicy(Qt.FocusPolicy.NoFocus)
 
         self.layout_menu_left.addWidget(self.btn_run)
 
@@ -89,8 +89,8 @@ class Ui_MainWindow(object):
         self.frm_manual = QFrame(self.centralwidget)
         self.frm_manual.setObjectName(u"frm_manual")
         self.frm_manual.setGeometry(QRect(100, 30, 701, 361))
-        self.frm_manual.setFrameShape(QFrame.StyledPanel)
-        self.frm_manual.setFrameShadow(QFrame.Raised)
+        self.frm_manual.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frm_manual.setFrameShadow(QFrame.Shadow.Raised)
         self.gridLayoutWidget = QWidget(self.frm_manual)
         self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
         self.gridLayoutWidget.setGeometry(QRect(550, 60, 91, 84))
@@ -127,7 +127,7 @@ class Ui_MainWindow(object):
 
         self.display_y = QLabel(self.gridLayoutWidget)
         self.display_y.setObjectName(u"display_y")
-        self.display_y.setFocusPolicy(Qt.WheelFocus)
+        self.display_y.setFocusPolicy(Qt.FocusPolicy.WheelFocus)
         self.display_y.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "")
 
@@ -141,8 +141,8 @@ class Ui_MainWindow(object):
 "border-radius: 7px;\n"
 "")
         self.led_joy_status.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
-        self.led_joy_status.setFrameShape(QFrame.StyledPanel)
-        self.led_joy_status.setFrameShadow(QFrame.Plain)
+        self.led_joy_status.setFrameShape(QFrame.Shape.StyledPanel)
+        self.led_joy_status.setFrameShadow(QFrame.Shadow.Plain)
 
         self.formLayout.setWidget(0, QFormLayout.FieldRole, self.led_joy_status)
 
@@ -153,8 +153,8 @@ class Ui_MainWindow(object):
 "border-radius: 7px;\n"
 "")
         self.led_joy_trig_status.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
-        self.led_joy_trig_status.setFrameShape(QFrame.StyledPanel)
-        self.led_joy_trig_status.setFrameShadow(QFrame.Raised)
+        self.led_joy_trig_status.setFrameShape(QFrame.Shape.StyledPanel)
+        self.led_joy_trig_status.setFrameShadow(QFrame.Shadow.Raised)
 
         self.formLayout.setWidget(1, QFormLayout.FieldRole, self.led_joy_trig_status)
 

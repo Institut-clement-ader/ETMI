@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'quit.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.0
+## Created by: Qt User Interface Compiler version 6.8.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -22,7 +22,7 @@ class Ui_Dialog_Quit(object):
     def setupUi(self, Dialog_Quit):
         if not Dialog_Quit.objectName():
             Dialog_Quit.setObjectName(u"Dialog_Quit")
-        Dialog_Quit.setWindowModality(Qt.NonModal)
+        Dialog_Quit.setWindowModality(Qt.WindowModality.NonModal)
         Dialog_Quit.resize(181, 89)
         Dialog_Quit.setLocale(QLocale(QLocale.French, QLocale.France))
         self.btn_quit = QDialogButtonBox(Dialog_Quit)
@@ -31,8 +31,8 @@ class Ui_Dialog_Quit(object):
         self.btn_quit.setCursor(QCursor(Qt.CursorShape.WaitCursor))
         self.btn_quit.setToolTipDuration(-3)
         self.btn_quit.setLocale(QLocale(QLocale.French, QLocale.France))
-        self.btn_quit.setOrientation(Qt.Horizontal)
-        self.btn_quit.setStandardButtons(QDialogButtonBox.No|QDialogButtonBox.Yes)
+        self.btn_quit.setOrientation(Qt.Orientation.Horizontal)
+        self.btn_quit.setStandardButtons(QDialogButtonBox.StandardButton.No|QDialogButtonBox.StandardButton.Yes)
         self.btn_quit.setCenterButtons(True)
         self.lbl_quit = QLabel(Dialog_Quit)
         self.lbl_quit.setObjectName(u"lbl_quit")

@@ -2,6 +2,8 @@
 import sys
 import os
 import datetime
+import webbrowser
+import setup
 
 # getting the name of the directory
 # where the this file is present.
@@ -29,7 +31,7 @@ from PySide6.QtWidgets import (
     QFrame,
 )
 from PySide6.QtCore import QFile, Slot, Signal, QThread
-from views.ui_etmi_ui import Ui_MainWindow
+from views.main_ui import Ui_MainWindow
 from views.quit_ui import Ui_Dialog_Quit
 from resources.color import *
 from Control4Axis.views.components_ui import Led, Label, Text
@@ -37,9 +39,21 @@ from models.Pmod_spi.pmodJSTK2 import PmodJstk2
 from models.Drives.drives import Drive, ManageDrives, config, DIR_POSITIF, DIR_NEGATIF
 from models.Encoder.encoder import Encoder
 
-test = True
-path_css = "./resources/css/styles.css"
-
+class DataRecord():
+    def __init__(self) -> None:
+        self.path=current + "/" + setup.name_file_output
+        self.hearders = ['colum1','colum2','colum3','colum4']
+        self.data = [[0,0,0,0]]
+        
+    def set_path(self, path):
+        self.path = path
+        
+    def save(self):
+       df = pd.DataFrame(self.data, columns=self.hearders)
+       df.to_csv(self.path, sep=';' , index=True, header=True)
+       
+    def append(self, data_insert):
+        self.data.append(data_insert)
 
 class JoyThread(QThread):
     #  """ Create Signal For initialize joy"""
@@ -98,6 +112,8 @@ class MainWindow(QMainWindow):
         # drives
         self.manage_drives = ManageDrives()
         self.checked_drives()
+        # menu
+        self.ui.actionHelp(self.display_docs())
 
     @Slot()
     def run(self):
@@ -207,6 +223,11 @@ class MainWindow(QMainWindow):
     def add_log(self, text):
         now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         self.ui.txt_logs.append(str(now) + ": " + text)
+        
+    # Menu
+    @Slot()
+    def display_docs(self):
+        webbrowser.open_new_tab("file:///" + os.getcwd() +  setup.path_docs)
 
 
 class QuitDlg(QDialog):
@@ -219,7 +240,7 @@ class QuitDlg(QDialog):
 if __name__ == "__main__":
     config()
     app = QApplication(sys.argv)
-    app.setStyleSheet(Path(path_css).read_text())
+    app.setStyleSheet(Path(setup.path_css).read_text())
     window = MainWindow()
 
     window.show()

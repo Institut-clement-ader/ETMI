@@ -89,7 +89,7 @@ color: rgb(255, 255, 255);</string>
      <item>
       <widget class="QPushButton" name="btn_run">
        <property name="focusPolicy">
-        <enum>Qt::NoFocus</enum>
+        <enum>Qt::FocusPolicy::NoFocus</enum>
        </property>
        <property name="text">
         <string>Lancer</string>
@@ -115,10 +115,10 @@ color: rgb(255, 255, 255);</string>
      </rect>
     </property>
     <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
+     <enum>QFrame::Shape::StyledPanel</enum>
     </property>
     <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
+     <enum>QFrame::Shadow::Raised</enum>
     </property>
     <widget class="QWidget" name="gridLayoutWidget">
      <property name="geometry">
@@ -178,7 +178,7 @@ color: rgb(255, 255, 255);</string>
       <item row="3" column="1">
        <widget class="QLabel" name="display_y">
         <property name="focusPolicy">
-         <enum>Qt::WheelFocus</enum>
+         <enum>Qt::FocusPolicy::WheelFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(255, 255, 255);
@@ -212,10 +212,10 @@ border-radius: 7px;
          <locale language="English" country="UnitedStates"/>
         </property>
         <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
+         <enum>QFrame::Shape::StyledPanel</enum>
         </property>
         <property name="frameShadow">
-         <enum>QFrame::Plain</enum>
+         <enum>QFrame::Shadow::Plain</enum>
         </property>
        </widget>
       </item>
@@ -236,10 +236,10 @@ border-radius: 7px;
          <locale language="English" country="UnitedStates"/>
         </property>
         <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
+         <enum>QFrame::Shape::StyledPanel</enum>
         </property>
         <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
+         <enum>QFrame::Shadow::Raised</enum>
         </property>
        </widget>
       </item>

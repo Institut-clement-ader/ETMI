@@ -3,7 +3,7 @@
  <class>Dialog_Quit</class>
  <widget class="QDialog" name="Dialog_Quit">
   <property name="windowModality">
-   <enum>Qt::NonModal</enum>
+   <enum>Qt::WindowModality::NonModal</enum>
   </property>
   <property name="geometry">
    <rect>
@@ -38,10 +38,10 @@
     <locale language="French" country="France"/>
    </property>
    <property name="orientation">
-    <enum>Qt::Horizontal</enum>
+    <enum>Qt::Orientation::Horizontal</enum>
    </property>
    <property name="standardButtons">
-    <set>QDialogButtonBox::No|QDialogButtonBox::Yes</set>
+    <set>QDialogButtonBox::StandardButton::No|QDialogButtonBox::StandardButton::Yes</set>
    </property>
    <property name="centerButtons">
     <bool>true</bool>
