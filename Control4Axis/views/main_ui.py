@@ -19,14 +19,14 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
 from PySide6.QtWidgets import (QApplication, QCheckBox, QFormLayout, QFrame,
     QGridLayout, QHBoxLayout, QLabel, QLineEdit,
     QMainWindow, QMenu, QMenuBar, QPushButton,
-    QSizePolicy, QStatusBar, QTextEdit, QToolBar,
-    QToolButton, QVBoxLayout, QWidget)
+    QSizePolicy, QStatusBar, QTabWidget, QTextEdit,
+    QToolBar, QToolButton, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(845, 600)
+        MainWindow.resize(817, 591)
         MainWindow.setMaximumSize(QSize(16777215, 16777215))
         MainWindow.setBaseSize(QSize(1, 5))
         MainWindow.setWindowOpacity(5.000000000000000)
@@ -86,201 +86,6 @@ class Ui_MainWindow(object):
 
         self.layout_menu_left.addWidget(self.btn_quit)
 
-        self.frm_manual = QFrame(self.centralwidget)
-        self.frm_manual.setObjectName(u"frm_manual")
-        self.frm_manual.setGeometry(QRect(100, 30, 701, 361))
-        self.frm_manual.setFrameShape(QFrame.Shape.StyledPanel)
-        self.frm_manual.setFrameShadow(QFrame.Shadow.Raised)
-        self.gridLayoutWidget = QWidget(self.frm_manual)
-        self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(550, 60, 91, 84))
-        self.formLayout = QFormLayout(self.gridLayoutWidget)
-        self.formLayout.setObjectName(u"formLayout")
-        self.formLayout.setContentsMargins(0, 0, 0, 0)
-        self.lbl_led_status = QLabel(self.gridLayoutWidget)
-        self.lbl_led_status.setObjectName(u"lbl_led_status")
-
-        self.formLayout.setWidget(0, QFormLayout.LabelRole, self.lbl_led_status)
-
-        self.lbl_led_trig_status = QLabel(self.gridLayoutWidget)
-        self.lbl_led_trig_status.setObjectName(u"lbl_led_trig_status")
-
-        self.formLayout.setWidget(1, QFormLayout.LabelRole, self.lbl_led_trig_status)
-
-        self.lbl_x = QLabel(self.gridLayoutWidget)
-        self.lbl_x.setObjectName(u"lbl_x")
-
-        self.formLayout.setWidget(2, QFormLayout.LabelRole, self.lbl_x)
-
-        self.display_x = QLabel(self.gridLayoutWidget)
-        self.display_x.setObjectName(u"display_x")
-        self.display_x.setBaseSize(QSize(0, 0))
-        self.display_x.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
-"")
-
-        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.display_x)
-
-        self.lbl_y = QLabel(self.gridLayoutWidget)
-        self.lbl_y.setObjectName(u"lbl_y")
-
-        self.formLayout.setWidget(3, QFormLayout.LabelRole, self.lbl_y)
-
-        self.display_y = QLabel(self.gridLayoutWidget)
-        self.display_y.setObjectName(u"display_y")
-        self.display_y.setFocusPolicy(Qt.FocusPolicy.WheelFocus)
-        self.display_y.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
-"")
-
-        self.formLayout.setWidget(3, QFormLayout.FieldRole, self.display_y)
-
-        self.led_joy_status = QFrame(self.gridLayoutWidget)
-        self.led_joy_status.setObjectName(u"led_joy_status")
-        self.led_joy_status.setMinimumSize(QSize(14, 14))
-        self.led_joy_status.setMaximumSize(QSize(15, 15))
-        self.led_joy_status.setStyleSheet(u"background-color: rgb(85, 255, 0);\n"
-"border-radius: 7px;\n"
-"")
-        self.led_joy_status.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
-        self.led_joy_status.setFrameShape(QFrame.Shape.StyledPanel)
-        self.led_joy_status.setFrameShadow(QFrame.Shadow.Plain)
-
-        self.formLayout.setWidget(0, QFormLayout.FieldRole, self.led_joy_status)
-
-        self.led_joy_trig_status = QFrame(self.gridLayoutWidget)
-        self.led_joy_trig_status.setObjectName(u"led_joy_trig_status")
-        self.led_joy_trig_status.setMaximumSize(QSize(15, 15))
-        self.led_joy_trig_status.setStyleSheet(u"background-color: rgb(85, 255, 0);\n"
-"border-radius: 7px;\n"
-"")
-        self.led_joy_trig_status.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
-        self.led_joy_trig_status.setFrameShape(QFrame.Shape.StyledPanel)
-        self.led_joy_trig_status.setFrameShadow(QFrame.Shadow.Raised)
-
-        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.led_joy_trig_status)
-
-        self.gridLayoutWidget_2 = QWidget(self.frm_manual)
-        self.gridLayoutWidget_2.setObjectName(u"gridLayoutWidget_2")
-        self.gridLayoutWidget_2.setGeometry(QRect(240, 170, 101, 156))
-        self.grid_layout_btn_dir = QGridLayout(self.gridLayoutWidget_2)
-        self.grid_layout_btn_dir.setObjectName(u"grid_layout_btn_dir")
-        self.grid_layout_btn_dir.setContentsMargins(0, 0, 0, 0)
-        self.btn_left_2 = QToolButton(self.gridLayoutWidget_2)
-        self.btn_left_2.setObjectName(u"btn_left_2")
-        self.btn_left_2.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-        icon = QIcon()
-        icon.addFile(u"images/svg/chevron-circle-left-svgrepo-com.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_left_2.setIcon(icon)
-        self.btn_left_2.setIconSize(QSize(25, 25))
-        self.btn_left_2.setCheckable(False)
-
-        self.grid_layout_btn_dir.addWidget(self.btn_left_2, 1, 0, 1, 1)
-
-        self.btn_right_2 = QToolButton(self.gridLayoutWidget_2)
-        self.btn_right_2.setObjectName(u"btn_right_2")
-        self.btn_right_2.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-        icon1 = QIcon()
-        icon1.addFile(u"images/svg/chevron-circle-right-svgrepo-com.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_right_2.setIcon(icon1)
-        self.btn_right_2.setIconSize(QSize(25, 25))
-        self.btn_right_2.setCheckable(False)
-
-        self.grid_layout_btn_dir.addWidget(self.btn_right_2, 1, 1, 1, 1)
-
-        self.btn_left_3 = QToolButton(self.gridLayoutWidget_2)
-        self.btn_left_3.setObjectName(u"btn_left_3")
-        self.btn_left_3.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-        self.btn_left_3.setIcon(icon)
-        self.btn_left_3.setIconSize(QSize(25, 25))
-        self.btn_left_3.setCheckable(False)
-
-        self.grid_layout_btn_dir.addWidget(self.btn_left_3, 2, 0, 1, 1)
-
-        self.btn_right_1 = QToolButton(self.gridLayoutWidget_2)
-        self.btn_right_1.setObjectName(u"btn_right_1")
-        self.btn_right_1.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-        self.btn_right_1.setIcon(icon1)
-        self.btn_right_1.setIconSize(QSize(25, 25))
-        self.btn_right_1.setCheckable(False)
-
-        self.grid_layout_btn_dir.addWidget(self.btn_right_1, 0, 1, 1, 1)
-
-        self.btn_right_3 = QToolButton(self.gridLayoutWidget_2)
-        self.btn_right_3.setObjectName(u"btn_right_3")
-        self.btn_right_3.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-        self.btn_right_3.setIcon(icon1)
-        self.btn_right_3.setIconSize(QSize(25, 25))
-        self.btn_right_3.setCheckable(False)
-
-        self.grid_layout_btn_dir.addWidget(self.btn_right_3, 2, 1, 1, 1)
-
-        self.btn_left_1 = QToolButton(self.gridLayoutWidget_2)
-        self.btn_left_1.setObjectName(u"btn_left_1")
-        self.btn_left_1.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-        self.btn_left_1.setIcon(icon)
-        self.btn_left_1.setIconSize(QSize(25, 25))
-        self.btn_left_1.setCheckable(False)
-
-        self.grid_layout_btn_dir.addWidget(self.btn_left_1, 0, 0, 1, 1)
-
-        self.btn_left_4 = QToolButton(self.gridLayoutWidget_2)
-        self.btn_left_4.setObjectName(u"btn_left_4")
-        self.btn_left_4.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-        self.btn_left_4.setIcon(icon)
-        self.btn_left_4.setIconSize(QSize(25, 25))
-        self.btn_left_4.setCheckable(False)
-
-        self.grid_layout_btn_dir.addWidget(self.btn_left_4, 3, 0, 1, 1)
-
-        self.btn_right_4 = QToolButton(self.gridLayoutWidget_2)
-        self.btn_right_4.setObjectName(u"btn_right_4")
-        self.btn_right_4.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-        self.btn_right_4.setIcon(icon1)
-        self.btn_right_4.setIconSize(QSize(25, 25))
-        self.btn_right_4.setCheckable(False)
-
-        self.grid_layout_btn_dir.addWidget(self.btn_right_4, 3, 1, 1, 1)
-
-        self.verticalLayoutWidget_2 = QWidget(self.frm_manual)
-        self.verticalLayoutWidget_2.setObjectName(u"verticalLayoutWidget_2")
-        self.verticalLayoutWidget_2.setGeometry(QRect(550, 170, 71, 100))
-        self.layout_choice_drive = QVBoxLayout(self.verticalLayoutWidget_2)
-        self.layout_choice_drive.setObjectName(u"layout_choice_drive")
-        self.layout_choice_drive.setContentsMargins(0, 0, 0, 0)
-        self.chk_drive1 = QCheckBox(self.verticalLayoutWidget_2)
-        self.chk_drive1.setObjectName(u"chk_drive1")
-
-        self.layout_choice_drive.addWidget(self.chk_drive1)
-
-        self.chk_drive2 = QCheckBox(self.verticalLayoutWidget_2)
-        self.chk_drive2.setObjectName(u"chk_drive2")
-
-        self.layout_choice_drive.addWidget(self.chk_drive2)
-
-        self.chk_drive3 = QCheckBox(self.verticalLayoutWidget_2)
-        self.chk_drive3.setObjectName(u"chk_drive3")
-
-        self.layout_choice_drive.addWidget(self.chk_drive3)
-
-        self.chk_drive4 = QCheckBox(self.verticalLayoutWidget_2)
-        self.chk_drive4.setObjectName(u"chk_drive4")
-
-        self.layout_choice_drive.addWidget(self.chk_drive4)
-
-        self.label = QLabel(self.frm_manual)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(350, 140, 81, 16))
-        self.txt_speed1 = QLineEdit(self.frm_manual)
-        self.txt_speed1.setObjectName(u"txt_speed1")
-        self.txt_speed1.setGeometry(QRect(350, 180, 41, 22))
-        self.txt_speed_2 = QLineEdit(self.frm_manual)
-        self.txt_speed_2.setObjectName(u"txt_speed_2")
-        self.txt_speed_2.setGeometry(QRect(350, 220, 41, 22))
-        self.txt_speed_4 = QLineEdit(self.frm_manual)
-        self.txt_speed_4.setObjectName(u"txt_speed_4")
-        self.txt_speed_4.setGeometry(QRect(350, 300, 41, 22))
-        self.txt_speed_3 = QLineEdit(self.frm_manual)
-        self.txt_speed_3.setObjectName(u"txt_speed_3")
-        self.txt_speed_3.setGeometry(QRect(350, 260, 41, 22))
         self.horizontalLayoutWidget = QWidget(self.centralwidget)
         self.horizontalLayoutWidget.setObjectName(u"horizontalLayoutWidget")
         self.horizontalLayoutWidget.setGeometry(QRect(100, 0, 701, 34))
@@ -335,10 +140,236 @@ class Ui_MainWindow(object):
         self.txt_logs.setObjectName(u"txt_logs")
         self.txt_logs.setGeometry(QRect(100, 460, 701, 71))
         self.txt_logs.setReadOnly(True)
+        self.tabWidget = QTabWidget(self.centralwidget)
+        self.tabWidget.setObjectName(u"tabWidget")
+        self.tabWidget.setGeometry(QRect(100, 30, 701, 421))
+        self.tabWidget.setTabBarAutoHide(True)
+        self.tab_Control = QWidget()
+        self.tab_Control.setObjectName(u"tab_Control")
+        self.txt_speed_2 = QLineEdit(self.tab_Control)
+        self.txt_speed_2.setObjectName(u"txt_speed_2")
+        self.txt_speed_2.setGeometry(QRect(290, 180, 41, 22))
+        self.txt_speed_3 = QLineEdit(self.tab_Control)
+        self.txt_speed_3.setObjectName(u"txt_speed_3")
+        self.txt_speed_3.setGeometry(QRect(290, 220, 41, 22))
+        self.lbl_speed = QLabel(self.tab_Control)
+        self.lbl_speed.setObjectName(u"lbl_speed")
+        self.lbl_speed.setGeometry(QRect(290, 100, 81, 16))
+        self.gridLayoutWidget_2 = QWidget(self.tab_Control)
+        self.gridLayoutWidget_2.setObjectName(u"gridLayoutWidget_2")
+        self.gridLayoutWidget_2.setGeometry(QRect(180, 130, 101, 196))
+        self.grid_layout_btn_dir_2 = QGridLayout(self.gridLayoutWidget_2)
+        self.grid_layout_btn_dir_2.setObjectName(u"grid_layout_btn_dir_2")
+        self.grid_layout_btn_dir_2.setContentsMargins(0, 0, 0, 0)
+        self.btn_left_3 = QToolButton(self.gridLayoutWidget_2)
+        self.btn_left_3.setObjectName(u"btn_left_3")
+        self.btn_left_3.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        icon = QIcon()
+        icon.addFile(u"../resources/images/svg/chevron-circle-left-svgrepo-com.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_left_3.setIcon(icon)
+        self.btn_left_3.setIconSize(QSize(25, 25))
+        self.btn_left_3.setCheckable(False)
+
+        self.grid_layout_btn_dir_2.addWidget(self.btn_left_3, 2, 0, 1, 1)
+
+        self.btn_left_4 = QToolButton(self.gridLayoutWidget_2)
+        self.btn_left_4.setObjectName(u"btn_left_4")
+        self.btn_left_4.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.btn_left_4.setIcon(icon)
+        self.btn_left_4.setIconSize(QSize(25, 25))
+        self.btn_left_4.setCheckable(False)
+
+        self.grid_layout_btn_dir_2.addWidget(self.btn_left_4, 3, 0, 1, 1)
+
+        self.btn_right_1 = QToolButton(self.gridLayoutWidget_2)
+        self.btn_right_1.setObjectName(u"btn_right_1")
+        self.btn_right_1.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        icon1 = QIcon()
+        icon1.addFile(u"../resources/images/svg/chevron-circle-right-svgrepo-com.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_right_1.setIcon(icon1)
+        self.btn_right_1.setIconSize(QSize(25, 25))
+        self.btn_right_1.setCheckable(False)
+
+        self.grid_layout_btn_dir_2.addWidget(self.btn_right_1, 0, 1, 1, 1)
+
+        self.btn_right_2 = QToolButton(self.gridLayoutWidget_2)
+        self.btn_right_2.setObjectName(u"btn_right_2")
+        self.btn_right_2.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.btn_right_2.setIcon(icon1)
+        self.btn_right_2.setIconSize(QSize(25, 25))
+        self.btn_right_2.setCheckable(False)
+
+        self.grid_layout_btn_dir_2.addWidget(self.btn_right_2, 1, 1, 1, 1)
+
+        self.btn_left_2 = QToolButton(self.gridLayoutWidget_2)
+        self.btn_left_2.setObjectName(u"btn_left_2")
+        self.btn_left_2.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.btn_left_2.setIcon(icon)
+        self.btn_left_2.setIconSize(QSize(25, 25))
+        self.btn_left_2.setCheckable(False)
+
+        self.grid_layout_btn_dir_2.addWidget(self.btn_left_2, 1, 0, 1, 1)
+
+        self.btn_right_4 = QToolButton(self.gridLayoutWidget_2)
+        self.btn_right_4.setObjectName(u"btn_right_4")
+        self.btn_right_4.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.btn_right_4.setIcon(icon1)
+        self.btn_right_4.setIconSize(QSize(25, 25))
+        self.btn_right_4.setCheckable(False)
+
+        self.grid_layout_btn_dir_2.addWidget(self.btn_right_4, 3, 1, 1, 1)
+
+        self.btn_right_3 = QToolButton(self.gridLayoutWidget_2)
+        self.btn_right_3.setObjectName(u"btn_right_3")
+        self.btn_right_3.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.btn_right_3.setIcon(icon1)
+        self.btn_right_3.setIconSize(QSize(25, 25))
+        self.btn_right_3.setCheckable(False)
+
+        self.grid_layout_btn_dir_2.addWidget(self.btn_right_3, 2, 1, 1, 1)
+
+        self.btn_left_1 = QToolButton(self.gridLayoutWidget_2)
+        self.btn_left_1.setObjectName(u"btn_left_1")
+        self.btn_left_1.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.btn_left_1.setIcon(icon)
+        self.btn_left_1.setIconSize(QSize(25, 25))
+        self.btn_left_1.setCheckable(False)
+
+        self.grid_layout_btn_dir_2.addWidget(self.btn_left_1, 0, 0, 1, 1)
+
+        self.verticalLayoutWidget_2 = QWidget(self.tab_Control)
+        self.verticalLayoutWidget_2.setObjectName(u"verticalLayoutWidget_2")
+        self.verticalLayoutWidget_2.setGeometry(QRect(490, 130, 71, 100))
+        self.layout_choice_drive_2 = QVBoxLayout(self.verticalLayoutWidget_2)
+        self.layout_choice_drive_2.setObjectName(u"layout_choice_drive_2")
+        self.layout_choice_drive_2.setContentsMargins(0, 0, 0, 0)
+        self.chk_drive1 = QCheckBox(self.verticalLayoutWidget_2)
+        self.chk_drive1.setObjectName(u"chk_drive1")
+
+        self.layout_choice_drive_2.addWidget(self.chk_drive1)
+
+        self.chk_drive2 = QCheckBox(self.verticalLayoutWidget_2)
+        self.chk_drive2.setObjectName(u"chk_drive2")
+
+        self.layout_choice_drive_2.addWidget(self.chk_drive2)
+
+        self.chk_drive3 = QCheckBox(self.verticalLayoutWidget_2)
+        self.chk_drive3.setObjectName(u"chk_drive3")
+
+        self.layout_choice_drive_2.addWidget(self.chk_drive3)
+
+        self.chk_drive4 = QCheckBox(self.verticalLayoutWidget_2)
+        self.chk_drive4.setObjectName(u"chk_drive4")
+
+        self.layout_choice_drive_2.addWidget(self.chk_drive4)
+
+        self.txt_speed1 = QLineEdit(self.tab_Control)
+        self.txt_speed1.setObjectName(u"txt_speed1")
+        self.txt_speed1.setGeometry(QRect(290, 140, 41, 22))
+        self.txt_speed_4 = QLineEdit(self.tab_Control)
+        self.txt_speed_4.setObjectName(u"txt_speed_4")
+        self.txt_speed_4.setGeometry(QRect(290, 260, 41, 22))
+        self.tabWidget.addTab(self.tab_Control, "")
+        self.tab_Parameters = QWidget()
+        self.tab_Parameters.setObjectName(u"tab_Parameters")
+        self.gridLayoutWidget = QWidget(self.tab_Parameters)
+        self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
+        self.gridLayoutWidget.setGeometry(QRect(580, 20, 91, 84))
+        self.frmLayout_Joystick = QFormLayout(self.gridLayoutWidget)
+        self.frmLayout_Joystick.setObjectName(u"frmLayout_Joystick")
+        self.frmLayout_Joystick.setContentsMargins(0, 0, 0, 0)
+        self.lbl_led_status = QLabel(self.gridLayoutWidget)
+        self.lbl_led_status.setObjectName(u"lbl_led_status")
+
+        self.frmLayout_Joystick.setWidget(0, QFormLayout.LabelRole, self.lbl_led_status)
+
+        self.lbl_led_trig_status = QLabel(self.gridLayoutWidget)
+        self.lbl_led_trig_status.setObjectName(u"lbl_led_trig_status")
+
+        self.frmLayout_Joystick.setWidget(1, QFormLayout.LabelRole, self.lbl_led_trig_status)
+
+        self.lbl_x = QLabel(self.gridLayoutWidget)
+        self.lbl_x.setObjectName(u"lbl_x")
+
+        self.frmLayout_Joystick.setWidget(2, QFormLayout.LabelRole, self.lbl_x)
+
+        self.display_x = QLabel(self.gridLayoutWidget)
+        self.display_x.setObjectName(u"display_x")
+        self.display_x.setBaseSize(QSize(0, 0))
+        self.display_x.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"")
+
+        self.frmLayout_Joystick.setWidget(2, QFormLayout.FieldRole, self.display_x)
+
+        self.lbl_y = QLabel(self.gridLayoutWidget)
+        self.lbl_y.setObjectName(u"lbl_y")
+
+        self.frmLayout_Joystick.setWidget(3, QFormLayout.LabelRole, self.lbl_y)
+
+        self.display_y = QLabel(self.gridLayoutWidget)
+        self.display_y.setObjectName(u"display_y")
+        self.display_y.setFocusPolicy(Qt.FocusPolicy.WheelFocus)
+        self.display_y.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"")
+
+        self.frmLayout_Joystick.setWidget(3, QFormLayout.FieldRole, self.display_y)
+
+        self.led_joy_status = QFrame(self.gridLayoutWidget)
+        self.led_joy_status.setObjectName(u"led_joy_status")
+        self.led_joy_status.setMinimumSize(QSize(14, 14))
+        self.led_joy_status.setMaximumSize(QSize(15, 15))
+        self.led_joy_status.setStyleSheet(u"background-color: rgb(85, 255, 0);\n"
+"border-radius: 7px;\n"
+"")
+        self.led_joy_status.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
+        self.led_joy_status.setFrameShape(QFrame.Shape.StyledPanel)
+        self.led_joy_status.setFrameShadow(QFrame.Shadow.Plain)
+
+        self.frmLayout_Joystick.setWidget(0, QFormLayout.FieldRole, self.led_joy_status)
+
+        self.led_joy_trig_status = QFrame(self.gridLayoutWidget)
+        self.led_joy_trig_status.setObjectName(u"led_joy_trig_status")
+        self.led_joy_trig_status.setMaximumSize(QSize(15, 15))
+        self.led_joy_trig_status.setStyleSheet(u"background-color: rgb(85, 255, 0);\n"
+"border-radius: 7px;\n"
+"")
+        self.led_joy_trig_status.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
+        self.led_joy_trig_status.setFrameShape(QFrame.Shape.StyledPanel)
+        self.led_joy_trig_status.setFrameShadow(QFrame.Shadow.Raised)
+
+        self.frmLayout_Joystick.setWidget(1, QFormLayout.FieldRole, self.led_joy_trig_status)
+
+        self.chk_joystick = QCheckBox(self.tab_Parameters)
+        self.chk_joystick.setObjectName(u"chk_joystick")
+        self.chk_joystick.setGeometry(QRect(40, 40, 131, 20))
+        self.chk_joystick.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
+        self.btn_path_file_save_encoder = QPushButton(self.tab_Parameters)
+        self.btn_path_file_save_encoder.setObjectName(u"btn_path_file_save_encoder")
+        self.btn_path_file_save_encoder.setGeometry(QRect(390, 70, 31, 24))
+        self.layoutWidget = QWidget(self.tab_Parameters)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.layoutWidget.setGeometry(QRect(50, 70, 341, 24))
+        self.horizontalLayout = QHBoxLayout(self.layoutWidget)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.label = QLabel(self.layoutWidget)
+        self.label.setObjectName(u"label")
+
+        self.horizontalLayout.addWidget(self.label)
+
+        self.lineEdit_file_save_encoders = QLineEdit(self.layoutWidget)
+        self.lineEdit_file_save_encoders.setObjectName(u"lineEdit_file_save_encoders")
+
+        self.horizontalLayout.addWidget(self.lineEdit_file_save_encoders)
+
+        self.tabWidget.addTab(self.tab_Parameters, "")
+        self.btn_clear_logs = QPushButton(self.centralwidget)
+        self.btn_clear_logs.setObjectName(u"btn_clear_logs")
+        self.btn_clear_logs.setGeometry(QRect(10, 500, 75, 24))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 845, 22))
+        self.menubar.setGeometry(QRect(0, 0, 817, 22))
         self.menuFichier = QMenu(self.menubar)
         self.menuFichier.setObjectName(u"menuFichier")
         self.menuAide = QMenu(self.menubar)
@@ -354,18 +385,6 @@ class Ui_MainWindow(object):
         QWidget.setTabOrder(self.btn_logs, self.btn_manual)
         QWidget.setTabOrder(self.btn_manual, self.btn_parameters)
         QWidget.setTabOrder(self.btn_parameters, self.btn_auto)
-        QWidget.setTabOrder(self.btn_auto, self.chk_drive1)
-        QWidget.setTabOrder(self.chk_drive1, self.chk_drive2)
-        QWidget.setTabOrder(self.chk_drive2, self.chk_drive3)
-        QWidget.setTabOrder(self.chk_drive3, self.chk_drive4)
-        QWidget.setTabOrder(self.chk_drive4, self.btn_left_1)
-        QWidget.setTabOrder(self.btn_left_1, self.btn_right_1)
-        QWidget.setTabOrder(self.btn_right_1, self.btn_left_2)
-        QWidget.setTabOrder(self.btn_left_2, self.btn_right_2)
-        QWidget.setTabOrder(self.btn_right_2, self.btn_left_3)
-        QWidget.setTabOrder(self.btn_left_3, self.btn_right_3)
-        QWidget.setTabOrder(self.btn_right_3, self.btn_left_4)
-        QWidget.setTabOrder(self.btn_left_4, self.btn_right_4)
 
         self.menubar.addAction(self.menuFichier.menuAction())
         self.menubar.addAction(self.menuAide.menuAction())
@@ -376,37 +395,15 @@ class Ui_MainWindow(object):
         self.menuAide.addAction(self.actionHelp)
 
         self.retranslateUi(MainWindow)
-        self.actionQuit.triggered.connect(MainWindow.close)
-        self.btn_quit.clicked.connect(MainWindow.close)
-        self.btn_manual.clicked.connect(MainWindow.manual)
-        self.btn_auto.clicked.connect(MainWindow.auto)
-        self.chk_drive4.stateChanged.connect(MainWindow.checked_drives)
-        self.chk_drive2.stateChanged.connect(MainWindow.checked_drives)
-        self.chk_drive1.stateChanged.connect(MainWindow.checked_drives)
-        self.chk_drive3.stateChanged.connect(MainWindow.checked_drives)
-        self.btn_right_1.pressed.connect(MainWindow.action_drives)
-        self.btn_right_1.released.connect(MainWindow.action_drives)
-        self.btn_left_1.pressed.connect(MainWindow.action_drives)
-        self.btn_left_1.released.connect(MainWindow.action_drives)
-        self.btn_right_2.pressed.connect(MainWindow.action_drives)
-        self.btn_right_2.released.connect(MainWindow.action_drives)
-        self.btn_left_2.pressed.connect(MainWindow.action_drives)
-        self.btn_left_2.released.connect(MainWindow.action_drives)
-        self.btn_left_3.pressed.connect(MainWindow.action_drives)
-        self.btn_left_3.released.connect(MainWindow.action_drives)
-        self.btn_right_3.pressed.connect(MainWindow.action_drives)
-        self.btn_right_3.released.connect(MainWindow.action_drives)
-        self.btn_left_4.pressed.connect(MainWindow.action_drives)
-        self.btn_left_4.released.connect(MainWindow.action_drives)
-        self.btn_right_4.released.connect(MainWindow.action_drives)
-        self.btn_right_4.pressed.connect(MainWindow.action_drives)
-        self.btn_right_4.released.connect(MainWindow.action_drives)
+
+        self.tabWidget.setCurrentIndex(1)
+
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"ETMI Pilotage", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Control4Axsis", None))
         self.actionOpenFile.setText(QCoreApplication.translate("MainWindow", u"Ouvrir un fichier", None))
         self.actionQuit.setText(QCoreApplication.translate("MainWindow", u"Quitter", None))
         self.actionAbout.setText(QCoreApplication.translate("MainWindow", u"A propos de...", None))
@@ -417,25 +414,6 @@ class Ui_MainWindow(object):
         self.btn_logs.setText(QCoreApplication.translate("MainWindow", u"Log", None))
         self.btn_run.setText(QCoreApplication.translate("MainWindow", u"Lancer", None))
         self.btn_quit.setText(QCoreApplication.translate("MainWindow", u"Quitter", None))
-        self.lbl_led_status.setText(QCoreApplication.translate("MainWindow", u"Joystick", None))
-        self.lbl_led_trig_status.setText(QCoreApplication.translate("MainWindow", u"Gachette", None))
-        self.lbl_x.setText(QCoreApplication.translate("MainWindow", u"Coord. X", None))
-        self.display_x.setText("")
-        self.lbl_y.setText(QCoreApplication.translate("MainWindow", u"Coord. Y", None))
-        self.display_y.setText("")
-        self.btn_left_2.setText("")
-        self.btn_right_2.setText("")
-        self.btn_left_3.setText("")
-        self.btn_right_1.setText("")
-        self.btn_right_3.setText("")
-        self.btn_left_1.setText("")
-        self.btn_left_4.setText("")
-        self.btn_right_4.setText("")
-        self.chk_drive1.setText(QCoreApplication.translate("MainWindow", u"Drive 1", None))
-        self.chk_drive2.setText(QCoreApplication.translate("MainWindow", u"Drive 2", None))
-        self.chk_drive3.setText(QCoreApplication.translate("MainWindow", u"Drive 3", None))
-        self.chk_drive4.setText(QCoreApplication.translate("MainWindow", u"Drive 4", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Vitesse (mm/s)", None))
         self.lbl_drive1.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"right\"><span style=\" font-weight:700;\">Drive 1</span></p></body></html>", None))
         self.txt_drive1.setText("")
         self.lbl_drive2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"right\"><span style=\" font-weight:700;\">Drive 2</span></p></body></html>", None))
@@ -444,6 +422,31 @@ class Ui_MainWindow(object):
         self.txt_drive3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><br/></p></body></html>", None))
         self.lbl_drive4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"right\"><span style=\" font-weight:700;\">Drive 4</span></p></body></html>", None))
         self.txt_drive4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><br/></p></body></html>", None))
+        self.lbl_speed.setText(QCoreApplication.translate("MainWindow", u"Vitesse (mm/s)", None))
+        self.btn_left_3.setText("")
+        self.btn_left_4.setText("")
+        self.btn_right_1.setText("")
+        self.btn_right_2.setText("")
+        self.btn_left_2.setText("")
+        self.btn_right_4.setText("")
+        self.btn_right_3.setText("")
+        self.btn_left_1.setText("")
+        self.chk_drive1.setText(QCoreApplication.translate("MainWindow", u"Drive 1", None))
+        self.chk_drive2.setText(QCoreApplication.translate("MainWindow", u"Drive 2", None))
+        self.chk_drive3.setText(QCoreApplication.translate("MainWindow", u"Drive 3", None))
+        self.chk_drive4.setText(QCoreApplication.translate("MainWindow", u"Drive 4", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_Control), QCoreApplication.translate("MainWindow", u"Control", None))
+        self.lbl_led_status.setText(QCoreApplication.translate("MainWindow", u"Joystick", None))
+        self.lbl_led_trig_status.setText(QCoreApplication.translate("MainWindow", u"Gachette", None))
+        self.lbl_x.setText(QCoreApplication.translate("MainWindow", u"Coord. X", None))
+        self.display_x.setText("")
+        self.lbl_y.setText(QCoreApplication.translate("MainWindow", u"Coord. Y", None))
+        self.display_y.setText("")
+        self.chk_joystick.setText(QCoreApplication.translate("MainWindow", u"Activer Joystick", None))
+        self.btn_path_file_save_encoder.setText(QCoreApplication.translate("MainWindow", u"...", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Fichier d'enregistrements", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_Parameters), QCoreApplication.translate("MainWindow", u"Parameters", None))
+        self.btn_clear_logs.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
         self.menuFichier.setTitle(QCoreApplication.translate("MainWindow", u"Fichier", None))
         self.menuAide.setTitle(QCoreApplication.translate("MainWindow", u"Aide", None))
         self.toolBar.setWindowTitle(QCoreApplication.translate("MainWindow", u"toolBar", None))

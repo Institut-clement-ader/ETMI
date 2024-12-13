@@ -38,22 +38,24 @@ from Control4Axis.views.components_ui import Led, Label, Text
 from models.Pmod_spi.pmodJSTK2 import PmodJstk2
 from models.Drives.drives import Drive, ManageDrives, config, DIR_POSITIF, DIR_NEGATIF
 from models.Encoder.encoder import Encoder
+# import pandas as pd
 
-class DataRecord():
-    def __init__(self) -> None:
-        self.path=current + "/" + setup.name_file_output
-        self.hearders = ['colum1','colum2','colum3','colum4']
-        self.data = [[0,0,0,0]]
+
+# class DataRecord():
+#     def __init__(self) -> None:
+#         self.path=current + "/" + setup.name_file_output
+#         self.hearders = ['colum1','colum2','colum3','colum4']
+#         self.data = [[0,0,0,0]]
         
-    def set_path(self, path):
-        self.path = path
+#     def set_path(self, path):
+#         self.path = path
         
-    def save(self):
-       df = pd.DataFrame(self.data, columns=self.hearders)
-       df.to_csv(self.path, sep=';' , index=True, header=True)
+#     def save(self):
+#        df = pd.DataFrame(self.data, columns=self.hearders)
+#        df.to_csv(self.path, sep=';' , index=True, header=True)
        
-    def append(self, data_insert):
-        self.data.append(data_insert)
+#     def append(self, data_insert):
+#         self.data.append(data_insert)
 
 class JoyThread(QThread):
     #  """ Create Signal For initialize joy"""
@@ -76,7 +78,6 @@ class ManualThread(QThread):
     def __init__(self, joy):
         QThread.__init__(self)
         self.joy = joy
-        # # self.is_running = False
 
     def run(self):
         self.is_running = True
@@ -95,14 +96,26 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.ui.btn_run.clicked.connect(self.run)
-        # self.ui.btnQuit.clicked.connect(self.quit)
-        # self.ui.actionQuit.triggered.connect(self.quit)
+
         self.led_joy_status = Led(self.ui.led_joy_status)
         self.led_joy_trig_status = Led(self.ui.led_joy_trig_status)
         self.text_x = Text(self.ui.display_x)
         self.text_y = Text(self.ui.display_y)
         self.joy = PmodJstk2()
+        
+        #Signals Menu
+        self.ui.actionQuit.triggered.connect(self.close)
+        self.ui.actionHelp.triggered.connect(self.display_docs)
+        #Signals 
+        self.ui.btn_quit.clicked.connect(self.close)
+        self.ui.btn_manual.clicked.connect(self.manual)
+        self.ui.btn_auto.clicked.connect(self.auto)
+        self.ui.btn_run.clicked.connect(self.run)
+        self.ui.chk_joystick.stateChanged.connect(self.chk_joystick_change)
+        self.ui.btn_clear_logs.clicked.connect(self.clear_logs)
+        self.ui.btn_run.clicked.connect(self.run)
+
+        
         # thread
         self.th_joy = JoyThread(self.joy)
         self.th_joy.progress.connect(self.update_led_joy_status)
@@ -113,7 +126,7 @@ class MainWindow(QMainWindow):
         self.manage_drives = ManageDrives()
         self.checked_drives()
         # menu
-        self.ui.actionHelp(self.display_docs())
+        
 
     @Slot()
     def run(self):
@@ -129,11 +142,26 @@ class MainWindow(QMainWindow):
 
     @Slot()
     def manual(self):
-        self.th_joy_manual.start()
+        self.ui.chk_joystick.setChecked(True)
 
     @Slot()
     def auto(self):
-        self.th_joy_manual.stop()
+        self.ui.chk_joystick.setChecked(False)
+        
+    @Slot()
+    def chk_joystick_change(self):
+        if self.ui.chk_joystick.isChecked():
+            if not self.th_joy_manual.isRunning():
+                self.add_log("Joystick actived")
+                self.th_joy_manual.start()
+        else:
+            if self.th_joy_manual.isRunning():
+                self.add_log("Joystick Deactived")
+                self.th_joy_manual.stop()
+                
+    @Slot()
+    def clear_logs(self):
+        self.ui.txt_logs.clear()
 
     @Slot()
     def checked_drives(self):
@@ -197,7 +225,8 @@ class MainWindow(QMainWindow):
         reply = dlb.exec()
         if reply == QDialog.DialogCode.Accepted:
             self.joy.spi_close()
-            self.th_joy_manual.stop()
+            if self.th_joy_manual.isRunning():
+                self.th_joy_manual.stop()
             self.manage_drives.gpio_clean()
             eventQCloseEvent.accept()
         else:
@@ -227,7 +256,7 @@ class MainWindow(QMainWindow):
     # Menu
     @Slot()
     def display_docs(self):
-        webbrowser.open_new_tab("file:///" + os.getcwd() +  setup.path_docs)
+        webbrowser.open_new_tab("file:///" + os.path.abspath(os.path.join(os.getcwd(), os.pardir)) +  setup.path_docs)
 
 
 class QuitDlg(QDialog):

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>845</width>
-    <height>600</height>
+    <width>817</width>
+    <height>591</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>ETMI Pilotage</string>
+   <string>Control4Axsis</string>
   </property>
   <property name="windowOpacity">
    <double>5.000000000000000</double>
@@ -104,436 +104,6 @@ color: rgb(255, 255, 255);</string>
       </widget>
      </item>
     </layout>
-   </widget>
-   <widget class="QFrame" name="frm_manual">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>30</y>
-      <width>701</width>
-      <height>361</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Shape::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Shadow::Raised</enum>
-    </property>
-    <widget class="QWidget" name="gridLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>550</x>
-       <y>60</y>
-       <width>91</width>
-       <height>84</height>
-      </rect>
-     </property>
-     <layout class="QFormLayout" name="formLayout">
-      <item row="0" column="0">
-       <widget class="QLabel" name="lbl_led_status">
-        <property name="text">
-         <string>Joystick</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="lbl_led_trig_status">
-        <property name="text">
-         <string>Gachette</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="lbl_x">
-        <property name="text">
-         <string>Coord. X</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QLabel" name="display_x">
-        <property name="baseSize">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);
-</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="lbl_y">
-        <property name="text">
-         <string>Coord. Y</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QLabel" name="display_y">
-        <property name="focusPolicy">
-         <enum>Qt::FocusPolicy::WheelFocus</enum>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);
-</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QFrame" name="led_joy_status">
-        <property name="minimumSize">
-         <size>
-          <width>14</width>
-          <height>14</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>15</width>
-          <height>15</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(85, 255, 0);
-border-radius: 7px;
-</string>
-        </property>
-        <property name="locale">
-         <locale language="English" country="UnitedStates"/>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::Shape::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Shadow::Plain</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QFrame" name="led_joy_trig_status">
-        <property name="maximumSize">
-         <size>
-          <width>15</width>
-          <height>15</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(85, 255, 0);
-border-radius: 7px;
-</string>
-        </property>
-        <property name="locale">
-         <locale language="English" country="UnitedStates"/>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::Shape::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Shadow::Raised</enum>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="gridLayoutWidget_2">
-     <property name="geometry">
-      <rect>
-       <x>240</x>
-       <y>170</y>
-       <width>101</width>
-       <height>156</height>
-      </rect>
-     </property>
-     <layout class="QGridLayout" name="grid_layout_btn_dir">
-      <item row="1" column="0">
-       <widget class="QToolButton" name="btn_left_2">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>images/svg/chevron-circle-left-svgrepo-com.svg</normaloff>images/svg/chevron-circle-left-svgrepo-com.svg</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>25</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="checkable">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QToolButton" name="btn_right_2">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>images/svg/chevron-circle-right-svgrepo-com.svg</normaloff>images/svg/chevron-circle-right-svgrepo-com.svg</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>25</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="checkable">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QToolButton" name="btn_left_3">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>images/svg/chevron-circle-left-svgrepo-com.svg</normaloff>images/svg/chevron-circle-left-svgrepo-com.svg</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>25</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="checkable">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QToolButton" name="btn_right_1">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>images/svg/chevron-circle-right-svgrepo-com.svg</normaloff>images/svg/chevron-circle-right-svgrepo-com.svg</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>25</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="checkable">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QToolButton" name="btn_right_3">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>images/svg/chevron-circle-right-svgrepo-com.svg</normaloff>images/svg/chevron-circle-right-svgrepo-com.svg</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>25</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="checkable">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QToolButton" name="btn_left_1">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>images/svg/chevron-circle-left-svgrepo-com.svg</normaloff>images/svg/chevron-circle-left-svgrepo-com.svg</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>25</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="checkable">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QToolButton" name="btn_left_4">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>images/svg/chevron-circle-left-svgrepo-com.svg</normaloff>images/svg/chevron-circle-left-svgrepo-com.svg</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>25</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="checkable">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QToolButton" name="btn_right_4">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>images/svg/chevron-circle-right-svgrepo-com.svg</normaloff>images/svg/chevron-circle-right-svgrepo-com.svg</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>25</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="checkable">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="verticalLayoutWidget_2">
-     <property name="geometry">
-      <rect>
-       <x>550</x>
-       <y>170</y>
-       <width>71</width>
-       <height>100</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="layout_choice_drive">
-      <item>
-       <widget class="QCheckBox" name="chk_drive1">
-        <property name="text">
-         <string>Drive 1</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="chk_drive2">
-        <property name="text">
-         <string>Drive 2</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="chk_drive3">
-        <property name="text">
-         <string>Drive 3</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="chk_drive4">
-        <property name="text">
-         <string>Drive 4</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>350</x>
-       <y>140</y>
-       <width>81</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Vitesse (mm/s)</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="txt_speed1">
-     <property name="geometry">
-      <rect>
-       <x>350</x>
-       <y>180</y>
-       <width>41</width>
-       <height>22</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="txt_speed_2">
-     <property name="geometry">
-      <rect>
-       <x>350</x>
-       <y>220</y>
-       <width>41</width>
-       <height>22</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="txt_speed_4">
-     <property name="geometry">
-      <rect>
-       <x>350</x>
-       <y>300</y>
-       <width>41</width>
-       <height>22</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="txt_speed_3">
-     <property name="geometry">
-      <rect>
-       <x>350</x>
-       <y>260</y>
-       <width>41</width>
-       <height>22</height>
-      </rect>
-     </property>
-    </widget>
    </widget>
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
@@ -628,13 +198,517 @@ border-radius: 7px;
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>30</y>
+      <width>701</width>
+      <height>421</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <property name="tabBarAutoHide">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="tab_Control">
+     <attribute name="title">
+      <string>Control</string>
+     </attribute>
+     <widget class="QLineEdit" name="txt_speed_2">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>180</y>
+        <width>41</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="txt_speed_3">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>220</y>
+        <width>41</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_speed">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>100</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Vitesse (mm/s)</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>130</y>
+        <width>101</width>
+        <height>196</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="grid_layout_btn_dir_2">
+       <item row="2" column="0">
+        <widget class="QToolButton" name="btn_left_3">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../resources/images/svg/chevron-circle-left-svgrepo-com.svg</normaloff>../resources/images/svg/chevron-circle-left-svgrepo-com.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QToolButton" name="btn_left_4">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../resources/images/svg/chevron-circle-left-svgrepo-com.svg</normaloff>../resources/images/svg/chevron-circle-left-svgrepo-com.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QToolButton" name="btn_right_1">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../resources/images/svg/chevron-circle-right-svgrepo-com.svg</normaloff>../resources/images/svg/chevron-circle-right-svgrepo-com.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QToolButton" name="btn_right_2">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../resources/images/svg/chevron-circle-right-svgrepo-com.svg</normaloff>../resources/images/svg/chevron-circle-right-svgrepo-com.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QToolButton" name="btn_left_2">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../resources/images/svg/chevron-circle-left-svgrepo-com.svg</normaloff>../resources/images/svg/chevron-circle-left-svgrepo-com.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QToolButton" name="btn_right_4">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../resources/images/svg/chevron-circle-right-svgrepo-com.svg</normaloff>../resources/images/svg/chevron-circle-right-svgrepo-com.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QToolButton" name="btn_right_3">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../resources/images/svg/chevron-circle-right-svgrepo-com.svg</normaloff>../resources/images/svg/chevron-circle-right-svgrepo-com.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QToolButton" name="btn_left_1">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../resources/images/svg/chevron-circle-left-svgrepo-com.svg</normaloff>../resources/images/svg/chevron-circle-left-svgrepo-com.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="verticalLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>130</y>
+        <width>71</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="layout_choice_drive_2">
+       <item>
+        <widget class="QCheckBox" name="chk_drive1">
+         <property name="text">
+          <string>Drive 1</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="chk_drive2">
+         <property name="text">
+          <string>Drive 2</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="chk_drive3">
+         <property name="text">
+          <string>Drive 3</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="chk_drive4">
+         <property name="text">
+          <string>Drive 4</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLineEdit" name="txt_speed1">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>140</y>
+        <width>41</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="txt_speed_4">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>260</y>
+        <width>41</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_Parameters">
+     <attribute name="title">
+      <string>Parameters</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>20</y>
+        <width>91</width>
+        <height>84</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="frmLayout_Joystick">
+       <item row="0" column="0">
+        <widget class="QLabel" name="lbl_led_status">
+         <property name="text">
+          <string>Joystick</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="lbl_led_trig_status">
+         <property name="text">
+          <string>Gachette</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="lbl_x">
+         <property name="text">
+          <string>Coord. X</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLabel" name="display_x">
+         <property name="baseSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="lbl_y">
+         <property name="text">
+          <string>Coord. Y</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLabel" name="display_y">
+         <property name="focusPolicy">
+          <enum>Qt::FocusPolicy::WheelFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QFrame" name="led_joy_status">
+         <property name="minimumSize">
+          <size>
+           <width>14</width>
+           <height>14</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>15</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(85, 255, 0);
+border-radius: 7px;
+</string>
+         </property>
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Plain</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QFrame" name="led_joy_trig_status">
+         <property name="maximumSize">
+          <size>
+           <width>15</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(85, 255, 0);
+border-radius: 7px;
+</string>
+         </property>
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QCheckBox" name="chk_joystick">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>40</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LayoutDirection::RightToLeft</enum>
+      </property>
+      <property name="text">
+       <string>Activer Joystick</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_path_file_save_encoder">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>70</y>
+        <width>31</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>70</y>
+        <width>341</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Fichier d'enregistrements</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_file_save_encoders"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="btn_clear_logs">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>500</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clear</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>845</width>
+     <width>817</width>
      <height>22</height>
     </rect>
    </property>
@@ -695,427 +769,11 @@ border-radius: 7px;
   <tabstop>btn_manual</tabstop>
   <tabstop>btn_parameters</tabstop>
   <tabstop>btn_auto</tabstop>
-  <tabstop>chk_drive1</tabstop>
-  <tabstop>chk_drive2</tabstop>
-  <tabstop>chk_drive3</tabstop>
-  <tabstop>chk_drive4</tabstop>
-  <tabstop>btn_left_1</tabstop>
-  <tabstop>btn_right_1</tabstop>
-  <tabstop>btn_left_2</tabstop>
-  <tabstop>btn_right_2</tabstop>
-  <tabstop>btn_left_3</tabstop>
-  <tabstop>btn_right_3</tabstop>
-  <tabstop>btn_left_4</tabstop>
-  <tabstop>btn_right_4</tabstop>
  </tabstops>
  <resources/>
- <connections>
-  <connection>
-   <sender>actionQuit</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>399</x>
-     <y>299</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_quit</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>48</x>
-     <y>278</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>591</x>
-     <y>449</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_manual</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>manual()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>43</x>
-     <y>181</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>207</x>
-     <y>82</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_auto</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>auto()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>72</x>
-     <y>128</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>252</x>
-     <y>152</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>chk_drive4</sender>
-   <signal>stateChanged(int)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>checked_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>701</x>
-     <y>316</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>58</x>
-     <y>572</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>chk_drive2</sender>
-   <signal>stateChanged(int)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>checked_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>685</x>
-     <y>268</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>30</x>
-     <y>523</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>chk_drive1</sender>
-   <signal>stateChanged(int)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>checked_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>655</x>
-     <y>234</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>50</x>
-     <y>496</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>chk_drive3</sender>
-   <signal>stateChanged(int)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>checked_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>675</x>
-     <y>287</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>22</x>
-     <y>552</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_right_1</sender>
-   <signal>pressed()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>action_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>411</x>
-     <y>242</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>24</x>
-     <y>411</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_right_1</sender>
-   <signal>released()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>action_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>426</x>
-     <y>245</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>22</x>
-     <y>437</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_left_1</sender>
-   <signal>pressed()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>action_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>366</x>
-     <y>244</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>21</x>
-     <y>470</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_left_1</sender>
-   <signal>released()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>action_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>355</x>
-     <y>250</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>32</x>
-     <y>481</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_right_2</sender>
-   <signal>pressed()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>action_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>410</x>
-     <y>279</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>16</x>
-     <y>390</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_right_2</sender>
-   <signal>released()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>action_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>423</x>
-     <y>280</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>18</x>
-     <y>374</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_left_2</sender>
-   <signal>pressed()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>action_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>368</x>
-     <y>288</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>13</x>
-     <y>350</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_left_2</sender>
-   <signal>released()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>action_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>354</x>
-     <y>280</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>29</x>
-     <y>343</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_left_3</sender>
-   <signal>pressed()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>action_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>366</x>
-     <y>323</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>7</x>
-     <y>321</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_left_3</sender>
-   <signal>released()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>action_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>354</x>
-     <y>309</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>26</x>
-     <y>311</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_right_3</sender>
-   <signal>pressed()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>action_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>415</x>
-     <y>328</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>35</x>
-     <y>301</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_right_3</sender>
-   <signal>released()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>action_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>400</x>
-     <y>333</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>56</x>
-     <y>331</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_left_4</sender>
-   <signal>pressed()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>action_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>366</x>
-     <y>365</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>39</x>
-     <y>427</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_left_4</sender>
-   <signal>released()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>action_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>375</x>
-     <y>365</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>56</x>
-     <y>459</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_right_4</sender>
-   <signal>released()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>action_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>416</x>
-     <y>371</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>42</x>
-     <y>406</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_right_4</sender>
-   <signal>pressed()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>action_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>400</x>
-     <y>362</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>37</x>
-     <y>384</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_right_4</sender>
-   <signal>released()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>action_drives()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>429</x>
-     <y>363</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>39</x>
-     <y>370</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
  <slots>
-  <slot>quit()</slot>
   <slot>manual()</slot>
   <slot>auto()</slot>
-  <slot>checked_drives()</slot>
-  <slot>action_drives()</slot>
  </slots>
 </ui>

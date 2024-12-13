@@ -23,11 +23,11 @@ class Ui_Dialog_Quit(object):
         if not Dialog_Quit.objectName():
             Dialog_Quit.setObjectName(u"Dialog_Quit")
         Dialog_Quit.setWindowModality(Qt.WindowModality.NonModal)
-        Dialog_Quit.resize(181, 89)
+        Dialog_Quit.resize(193, 102)
         Dialog_Quit.setLocale(QLocale(QLocale.French, QLocale.France))
         self.btn_quit = QDialogButtonBox(Dialog_Quit)
         self.btn_quit.setObjectName(u"btn_quit")
-        self.btn_quit.setGeometry(QRect(-20, 50, 221, 32))
+        self.btn_quit.setGeometry(QRect(10, 60, 171, 32))
         self.btn_quit.setCursor(QCursor(Qt.CursorShape.WaitCursor))
         self.btn_quit.setToolTipDuration(-3)
         self.btn_quit.setLocale(QLocale(QLocale.French, QLocale.France))
@@ -36,7 +36,7 @@ class Ui_Dialog_Quit(object):
         self.btn_quit.setCenterButtons(True)
         self.lbl_quit = QLabel(Dialog_Quit)
         self.lbl_quit.setObjectName(u"lbl_quit")
-        self.lbl_quit.setGeometry(QRect(30, 20, 131, 16))
+        self.lbl_quit.setGeometry(QRect(30, 20, 161, 16))
 
         self.retranslateUi(Dialog_Quit)
         self.btn_quit.accepted.connect(Dialog_Quit.accept)

@@ -27,7 +27,7 @@ __version__ = "0.0.1"
 
 import spidev
 import time
-from constants import *
+from .constants import *
 
 
 class PmodJstk2:
